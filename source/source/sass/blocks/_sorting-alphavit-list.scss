@@ -1,0 +1,170 @@
+.sorting-alphavit-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 23px;
+  padding-right: 25px;
+  padding-left: 25px;
+
+  list-style: none;
+}
+
+// Отключаем у 2-го sorting-alphavit-list заглавные буквы и оставляем только списки городо.
+
+.sorting-alphavit-list--hidden .sorting-alphavit-list__link {
+  display: none;
+
+  color: $main-color--light;
+}
+
+.sorting-alphavit-list--hidden-plan-form .sorting-alphavit-list__link {
+  display: none;
+}
+
+.sorting-alphavit-list--hidden .sorting-alphavit-list__item {
+  width: 100%;
+}
+
+.sorting-alphavit-list__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 41px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  color: $main-text-color--dark;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1.4px;
+
+  background-color: #ffffff;
+  border: solid 1px #cbced9;
+
+  &:hover {
+    border-color: #959bb2;
+  }
+
+  &:active {
+    color: #ffffff;
+
+    background-color: $main-text-color--dark;
+    border-color: $main-text-color--dark;
+  }
+}
+
+.sorting-alphavit-list__link--current {
+  color: #ffffff;
+
+  background-color: $main-text-color--dark;
+  border: none;
+}
+
+// ^dropdown-countries-list
+
+.sorting-alphavit-list--dropdown-countries-list {
+  position: relative;
+
+  min-width: 220px;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.sorting-alphavit-list--dropdown-countries-list + .sorting-alphavit-list {
+  margin: 0;
+  padding: 19px;
+  padding-top: 14px;
+  padding-bottom: 16px;
+}
+
+
+@include media(screen, min, $tablet-width) {
+  .sorting-alphavit-list {
+    width: 385px;
+    max-height: 415px;
+    margin-bottom: 52px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .sorting-alphavit-list--hidden {
+    flex-grow: 1;
+    width: 200px;
+    max-height: 100%;
+    padding-top: 6px;
+    padding-left: 58px;
+  }
+
+  .sorting-alphavit-list--hidden-plan-form .sorting-alphavit-list__link {
+    display: none;
+  }
+
+  .sorting-alphavit-list--hidden-plan-form .sorting-alphavit-list__item {
+    width: auto;
+  }
+
+  .sorting-alphavit-list__item {
+    width: 20%;
+  }
+
+  .sorting-alphavit-list__link {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 7px;
+
+    font-weight: 700;
+    font-size: 60px;
+    text-align: left;
+    color: rgba(25, 33, 68, 0.2);
+
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      color: $main-color--light;
+    }
+
+    &:active {
+      color: rgba($main-color--light, 0.6);
+
+      background-color: transparent;
+    }
+  }
+
+  .sorting-alphavit-list__link--current {
+    color: $main-color--light;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .sorting-alphavit-list {
+    display: none;
+    width: 100%;
+    margin-bottom: 34px;
+    padding-left: 65px;
+  }
+
+  // Прячим один sorting-alphavit-list и показываем второй
+
+  .sorting-alphavit-list--hidden {
+    display: flex;
+  }
+
+  .sorting-alphavit-list--hidden .sorting-alphavit-list__link {
+    display: block;
+
+    &:active {
+      color: $main-color--light;
+    }
+  }
+
+  .sorting-alphavit-list--hidden .sorting-alphavit-list__item {
+    width: 16.66%;
+  }
+}

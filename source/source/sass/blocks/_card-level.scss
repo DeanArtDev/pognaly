@@ -1,0 +1,191 @@
+.card-level {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding-top: 12px;
+
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  color: #ffffff;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+
+  &--additional {
+    position: absolute;
+    top: 16px;
+    left: 17px;
+    z-index: 1;
+  }
+}
+
+.card-level__number-level {
+  margin-bottom: 1px;
+
+  &::after {
+    content: "";
+
+    display: block;
+    width: 31px;
+    height: 1px;
+
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.card-level__number-text {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.card-level svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transform: rotate(-90deg);
+
+  fill: none;
+  stroke: $second-color--darkest;
+  stroke-dasharray: 178.98;
+  stroke-width: 3;
+}
+
+// ^profile-description
+
+.card-level--profile-description {
+  width: 100px;
+  height: 100px;
+  margin-left: 19px;
+  padding-top: 20px;
+
+  background-color: transparent;
+}
+
+.card-level--profile-description svg {
+  stroke-width: 2;
+}
+
+.card-level__number-level--profile-description {
+  font-size: 38px;
+  color: $main-color;
+
+  &::after {
+    width: 49px;
+    height: 2px;
+
+    background-color: #cbced9;
+  }
+}
+
+.card-level__number-text--profile-description {
+  font-size: 18px;
+  color: $main-text-color;
+}
+
+// ^companions-results
+
+.card-level--companions-results {
+  align-self: flex-start;
+  width: 45px;
+  height: 45px;
+
+  color: $main-text-color--dark;
+
+  background-color: #ffffff;
+
+  &::before {
+    content: "левел:";
+    top: -25px;
+    right: -10px;
+
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+}
+
+.card-level__number-level--companions-result {
+  &::after {
+    display: none;
+  }
+}
+
+.card-level__number-text--companions-result {
+  display: none;
+}
+
+@include media(screen, min, $tablet-width) {
+  .card-level {
+    &--additional {
+      top: 20px;
+      left: 21px;
+    }
+  }
+
+  // ^companions-results
+  .card-level--companions-results {
+    width: 60px;
+    height: 60px;
+
+    border-top: none;
+
+    &::before {
+      content: "";
+    }
+  }
+
+  .card-level__number-level--companions-result {
+    &::after {
+      display: block;
+
+      background-color: rgba(68, 68, 68, 0.1);
+    }
+  }
+
+  .card-level__number-text--companions-result {
+    display: block;
+
+    color: rgba(68, 68, 68, 0.4);
+  }
+
+  // ^profile-description
+
+  .card-level--profile-description {
+    width: 94px;
+    height: 94px;
+    margin-left: 0;
+    padding-top: 18px;
+  }
+
+  .card-level__number-level--profile-description {
+    margin-bottom: 3px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  // ^profile-description
+
+  .card-level--profile-description {
+    margin-top: -11px;
+  }
+
+  .card-level__number-level--profile-description {
+    color: #ffffff;
+
+    &::after {
+      background-color: rgba(#ffffff, 0.3);
+    }
+  }
+
+  .card-level__number-text--profile-description {
+    color: #ffffff;
+  }
+}

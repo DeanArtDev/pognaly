@@ -1,0 +1,143 @@
+.authorization {
+  text-align: center;
+}
+
+.authorization__title {
+  display: block;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 24px;
+  color: #ff8d30;
+}
+
+.authorization__description {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.38;
+  color: #ffffff;
+}
+
+.authorization__form {
+  position: relative;
+
+  min-width: 270px;
+  margin-bottom: 28px;
+}
+
+.authorization__link {
+  color: $second-color;
+  text-decoration: none;
+
+  border-bottom: 1px solid $second-color;
+
+  &:hover,
+  &:active {
+    color: $second-color--darkest;
+
+    border-color: $second-color--darkest;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.authorization__input {
+  width: 100%;
+  padding: 20px;
+  padding-right: 60px;
+  padding-bottom: 21px;
+
+  font-weight: 700;
+  font-size: 18px;
+
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+
+  @include font-family("BloggerSans", "Tahoma");
+
+  &:hover {
+    background-color: #edeff6;
+  }
+
+  &:hover::placeholder {
+    color: rgba(68, 68, 68, 0.5);
+  }
+
+  &:focus {
+    color: #ffffff;
+
+    background-color: $main-color--light;
+    box-shadow: inset 0 0 0 4px #ffffff;
+  }
+
+  &:focus::placeholder {
+    color: #ffffff;
+  }
+
+  &:not(:valid) {
+    color: #ff0000;
+
+    background-color: #ffefef;
+  }
+}
+
+.authorization__input::placeholder {
+  font-weight: 700;
+  line-height: 1;
+  text-align: left;
+  color: rgba(68, 68, 68, 0.3);
+
+  @include font-family("BloggerSans", "Tahoma");
+}
+
+@include media(screen, min, $tablet-width) {
+  .authorization__title {
+    margin-bottom: 58px;
+
+    font-size: 45px;
+  }
+
+  .authorization__description {
+    width: auto;
+    margin-bottom: 66px;
+
+    font-size: 28px;
+    line-height: 1.18;
+  }
+
+  .authorization__description br:first-of-type {
+    display: none;
+  }
+
+  .authorization__form {
+    margin-bottom: 55px;
+  }
+
+  .authorization__input {
+    padding: 26px;
+    padding-bottom: 27px;
+    padding-left: 34px;
+
+    font-size: 24px;
+
+    border-radius: 20px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .authorization__description {
+    margin-bottom: 60px;
+  }
+
+  .authorization__form {
+    margin-bottom: 62px;
+  }
+}

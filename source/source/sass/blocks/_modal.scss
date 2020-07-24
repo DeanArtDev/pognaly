@@ -1,0 +1,90 @@
+.modal {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  display: none;
+  width: 100vw;
+  height: 100vh;
+
+  &--business-tariffs {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--active {
+    display: flex;
+  }
+}
+
+.modal__title {
+  width: auto;
+  margin: 0;
+  padding-bottom: 29px;
+
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  color: #ff8d30;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modal__list {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 92px;
+
+  list-style: none;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.38;
+  color: #444444;
+}
+
+.modal__item {
+  padding: 10px 0;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.modal__button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 18px 0;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #1d2e5b;
+  text-transform: uppercase;
+
+  background-color: #f3f4f8;
+  border: none;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+// ==========================================================================
+//  Работа модального окна без js
+// ==========================================================================
+
+// Управляется родительским классом modal--nojs
+// ==========================================================================
+
+.modal--nojs {
+  position: relative;
+  height: auto;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+@include media(screen, min, $desktop-width) {
+  .modal--nojs {
+    margin-top: -150px;
+  }
+}

@@ -1,0 +1,117 @@
+.pagination {
+  position: relative;
+
+  background-color: #ffffff;
+  border-radius: 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    display: block;
+    width: 1px;
+    height: 100%;
+    margin-left: -1px;
+
+    background-color: #edeff6;
+  }
+}
+
+.pagination__list {
+  display: none;
+}
+
+.pagination__button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.pagination__button {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50px;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover svg {
+    opacity: 0.6;
+  }
+
+  &:active svg {
+    opacity: 0.3;
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 19px;
+    padding-left: 28px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .pagination__list {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    list-style: none;
+  }
+
+  .pagination__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    color: $main-color;
+    text-decoration: none;
+
+    border-radius: 50%;
+
+    &:hover {
+      color: rgba($main-color, 0.6);
+    }
+
+    &:active {
+      color: rgba($main-color, 1);
+    }
+  }
+
+  .pagination__link--current {
+    background-color: $second-color;
+  }
+
+  .pagination__button {
+    width: auto;
+    min-height: 100px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .pagination {
+    padding-right: 28px;
+  }
+}

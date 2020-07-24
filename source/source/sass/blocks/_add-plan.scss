@@ -1,0 +1,142 @@
+.add-plan {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -30px;
+
+  background-color: #d4d9eb;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.add-plan__title {
+  width: 180px;
+  margin-bottom: 31px;
+}
+
+.add-plan__breadcrumbs {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 65px;
+  margin-top: -8px;
+  padding-right: 17px;
+  padding-left: 0;
+
+  list-style: none;
+  font-size: 0;
+}
+
+.add-plan__breadcrumbs--top {
+  display: flex;
+}
+
+.add-plan__breadcrumbs-item {
+  &::before {
+    content: "";
+
+    display: block;
+    width: 6px;
+    height: 5px;
+
+    background-color: rgba($main-text-color--dark, 0.3);
+    border-radius: 50%;
+  }
+}
+
+.add-plan__breadcrumbs-item--current {
+  color: #000000;
+
+  &::before {
+    background-color: rgba($main-text-color--dark, 1);
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .add-plan {
+    margin-top: -41px;
+  }
+
+  .add-plan__title {
+    width: 80%;
+    margin-bottom: 59px;
+
+    font-size: 36px;
+  }
+
+  .add-plan__breadcrumbs {
+    width: 73px;
+    margin-top: -27px;
+    padding-right: 0;
+  }
+
+  .add-plan__breadcrumbs-item::before {
+    width: 5px;
+    height: 5px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .add-plan {
+    margin-top: -57px;
+
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+  }
+
+  .add-plan__title {
+    padding-left: 70px;
+  }
+
+  // ^Хлебнве крошки
+
+  .add-plan__breadcrumbs {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: auto;
+    max-width: 350px;
+    min-height: 180px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    padding-top: 34px;
+    padding-right: 46px;
+    padding-bottom: 10px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 0.69;
+    color: rgba(#000000, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .add-plan__breadcrumbs--top {
+    display: none;
+  }
+
+  .add-plan__breadcrumbs-item {
+    position: relative;
+
+    margin-bottom: 18px;
+    padding-left: 42px;
+
+    line-height: 1.3;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+
+      width: 6px;
+      height: 5px;
+      margin-top: -2px;
+    }
+  }
+
+  .add-plan__breadcrumbs--padding {
+    align-self: flex-start;
+    margin-bottom: 85px;
+  }
+}

@@ -1,0 +1,278 @@
+.burger-menu {
+  display: none;
+
+  background-color: #ffffff;
+
+  &--close {
+    display: none;
+  }
+}
+// ==========================================================================
+//  Стили бургера управляются через родительские классы
+//    burger-menu--nojs и --open, --close
+// ==========================================================================
+//  При отключении js класс burger-menu--nojs не будет удаляться
+// ==========================================================================
+
+.burger-menu .site-list {
+  display: block;
+  margin-bottom: 51px;
+}
+
+.burger-menu .site-list__item {
+  line-height: 1;
+}
+
+.site-list__burger-menu .site-list__link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.2;
+  color: $main-color--light;
+  text-transform: uppercase;
+}
+
+.burger-menu .active-button {
+  width: 270px;
+  margin: 0 auto;
+  margin-bottom: 52px;
+  padding: 14px;
+}
+
+.burger-menu .user-list {
+  margin-bottom: 30px;
+  margin-left: 0;
+  padding: 0;
+}
+
+// ^burger-menu--open
+
+.burger-menu--open .user-list--scroll,
+.burger-menu--open .site-list--scroll {
+  display: none;
+}
+
+.burger-menu--open {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+
+  display: block;
+  min-width: 320px;
+  padding-top: 27px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 40px;
+  overflow-y: auto;
+}
+
+.burger-menu__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 64px;
+}
+
+// ^burger-menu--nojs
+
+.burger-menu--nojs {
+  display: block;
+  width: 100%;
+  height: 568px;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+.burger-menu--nojs .burger-menu__wrapper {
+  display: none;
+}
+
+// ^burger-menu-scroll
+
+.burger-menu--scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: block;
+  width: 100%;
+  max-width: 1440px;
+  padding: 25px 30px;
+}
+
+.burger-menu--scroll .site-list,
+.burger-menu--scroll .user-list__item,
+.burger-menu--scroll .social-network-list {
+  display: none;
+  margin-bottom: 0;
+}
+
+.burger-menu--scroll .burger-menu__wrapper {
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.burger-menu--scroll .burger-menu-button--close {
+  width: 25px;
+  height: 11px;
+
+  background-image: url("../img/menu.svg");
+}
+
+.burger-menu--scroll .user-list {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@include media(screen, min, $tablet-width) {
+  // ^burger-menu
+
+  .burger-menu .burger-menu__wrapper {
+    justify-content: space-between;
+    margin-bottom: 94px;
+
+    &::after {
+      content: "";
+
+      display: block;
+      width: 169px;
+      height: 5px;
+    }
+  }
+
+  .site-list__burger-menu {
+    margin-bottom: 137px;
+    padding-left: 56px;
+  }
+
+  .site-list__burger-menu .site-list__link {
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 1.18;
+    text-align: left;
+  }
+
+  .burger-menu .active-button--user-list {
+    position: absolute;
+    top: 36px;
+    right: 42px;
+
+    width: 189px;
+    padding: 10px;
+  }
+
+  .burger-menu .user-list {
+    margin-bottom: 115px;
+    padding-left: 56px;
+  }
+
+  .burger-menu .user-list__phone,
+  .burger-menu .user-list__email {
+    display: flex;
+  }
+
+  .burger-menu .social-network-list {
+    justify-content: flex-start;
+    padding-left: 60px;
+  }
+
+  // ^burger-menu--open
+
+  .burger-menu--open {
+    padding: 40px;
+    padding-bottom: 90px;
+  }
+
+  // ^burger-menu--nojs
+
+  .burger-menu--nojs {
+    height: 735px;
+  }
+
+  .burger-menu--nojs + .user-list--page-header {
+    display: none;
+  }
+
+  .burger-menu--nojs .active-button--user-list {
+    top: 50px;
+  }
+
+  // ^burger-menu-scroll
+
+  .burger-menu--scroll {
+    padding: 41px 42px;
+  }
+
+  .burger-menu--scroll .burger-menu__wrapper {
+    &::after {
+      display: none;
+    }
+  }
+
+  .burger-menu--scroll .burger-menu__wrapper,
+  .burger-menu--scroll .user-list {
+    margin-bottom: 0;
+  }
+
+  .burger-menu--scroll .user-list--scroll {
+    display: flex;
+    padding-left: 0;
+  }
+
+  .burger-menu--scroll .burger-menu-button--close {
+    margin-left: 18px;
+  }
+
+  .user-list--scroll,
+  .user-list--scroll .user-list__item:last-of-type {
+    display: block;
+  }
+
+  .user-list--scroll .user-list__login {
+    position: static;
+
+    margin-bottom: 0;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .burger-menu {
+    display: none;
+  }
+
+  // ^burger-menu--nojs
+
+  .burger-menu--nojs + .user-list--page-header {
+    display: flex;
+  }
+
+  // ^burger-menu_-scrool
+
+  .burger-menu--scroll {
+    display: block;
+    padding: 20px 60px;
+    padding-right: 40px;
+  }
+
+  .burger-menu--scroll .site-list--scroll {
+    display: flex;
+
+    &::before {
+      background-color: $main-color--light;
+    }
+  }
+
+  .site-list--scroll .site-list__link {
+    color: $main-color--light;
+  }
+
+  .user-list--scroll .user-list__item {
+    display: block;
+  }
+}

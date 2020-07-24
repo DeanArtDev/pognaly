@@ -1,0 +1,102 @@
+.add-profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 31px;
+
+  &--business-tariffs {
+    padding-left: 0;
+  }
+}
+
+.add-profile__link {
+  display: block;
+  width: 101px;
+
+  font-weight: 700;
+  font-size: 24px;
+  color: #ff8d30;
+  text-decoration: none;
+
+  &--business-tariffs {
+    width: auto;
+    margin-top: 31px;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+  }
+}
+
+.add-profile__avatar {
+  width: 99px;
+  height: 99px;
+
+  background: transparent url("../img/rates@1x.png") no-repeat center center;
+  background-size: contain;
+  border: none;
+
+  @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+    background-image: url("../img/rates@2x.png");
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .add-profile {
+    margin-bottom: 77px;
+
+    &--business-tariffs {
+      margin-bottom: 50px;
+    }
+  }
+
+  .add-profile__avatar {
+    position: absolute;
+    right: 85px;
+    bottom: 48px;
+  }
+
+  .add-profile__link {
+    width: 100%;
+    padding-left: 9px;
+
+    font-size: 45px;
+    text-align: left;
+
+    &--business-tariffs {
+      text-align: center;
+    }
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .add-profile {
+    margin-bottom: 139px;
+
+    &--business-tariffs {
+      margin-bottom: 51px;
+    }
+  }
+
+  .add-profile__link {
+    margin-left: -48px;
+
+    text-align: center;
+
+    &--business-tariffs {
+      margin: 0;
+      padding: 0;
+
+      text-align: center;
+    }
+  }
+
+  .add-profile__avatar {
+    right: 134px;
+    bottom: 266px;
+
+    width: 198px;
+    height: 198px;
+  }
+}

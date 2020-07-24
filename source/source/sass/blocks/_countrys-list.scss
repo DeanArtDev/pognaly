@@ -1,0 +1,167 @@
+.countrys-list {
+  position: relative;
+
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-top: -12px;
+  margin-left: -19px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.countrys-list__flag {
+  width: 35px;
+  height: 24px;
+  margin-bottom: 7px;
+  margin-left: 19px;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &--srilanka {
+    background-image: url("../img/flag-sri-lanka.svg");
+  }
+
+  &--tayland {
+    background-image: url("../img/flag-thailand.svg");
+  }
+
+  &--seychelles {
+    background-image: url("../img/flag-seychelles.svg");
+  }
+
+  &--belgium {
+    background-image: url("../img/flag-belgium.svg");
+  }
+
+  &--czech {
+    background-image: url("../img/flag-czech.svg");
+  }
+
+  &--usa {
+    background-image: url("../img/flag-usa.svg");
+  }
+
+  &--dominica {
+    background-image: url("../img/flag-dominica.svg");
+  }
+
+  &--australia {
+    background-image: url("../img/flag-australia.svg");
+  }
+
+  &--germany {
+    background-image: url("../img/flag-germany.svg");
+  }
+
+  &--britian {
+    background-image: url("../img/flag-united-kingdom.svg");
+  }
+}
+
+// ^companions-result
+
+.countrys-list--companions-result {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  padding-top: 23px;
+  padding-bottom: 12px;
+  padding-left: 25px;
+
+  border-top: 1px solid #edeff6;
+
+  &::before {
+    content: "хочет посетить:";
+    top: -9px;
+    left: 13px;
+
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+}
+
+.countrys-list__flag--companions-result {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin-bottom: 10px;
+  margin-left: 0;
+  padding-left: 40px;
+
+  background-position: center left;
+  background-size: 26px 18px;
+}
+
+.countrys-list__description {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2;
+  text-align: left;
+  color: $main-text-color--dark;
+  text-transform: uppercase;
+}
+
+.companions-result--folly {
+  margin-bottom: 8px;
+}
+
+@include media(screen, min, $tablet-width) {
+  // ^companions-result
+
+  .countrys-list--companions-result {
+    flex-direction: row;
+    align-self: flex-start;
+    padding: 0;
+    padding-top: 26px;
+    padding-left: 36px;
+
+    &::before {
+      left: 70px;
+    }
+  }
+
+  .countrys-list__flag--companions-result {
+    margin-right: 26px;
+    padding-left: 47px;
+
+    background-size: 35px 24px;
+  }
+
+  .countrys-list__description--companions-result {
+    font-size: 20px;
+  }
+
+  .companions-result--folly {
+    margin-bottom: 0;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  // ^companions-result
+
+  .countrys-list--companions-result {
+    padding-top: 0;
+    padding-left: 40px;
+    min-height: 111px;
+    flex-direction: column;
+    border-top: none;
+
+    &::before {
+      content: "";
+    }
+  }
+
+  .countrys-list__flag--companions-result {
+    margin-bottom: 13px;
+    padding-left: 53px;
+  }
+}

@@ -1,0 +1,171 @@
+// Управление через родительский селектор
+
+.dropdown-countries-list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 20;
+
+  display: none;
+  width: 221px;
+
+  background-color: #ffffff;
+  border: 1px solid #cbced9;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 20px 50px 0 rgba(29, 46, 91, 0.1);
+
+  .sorting-alphavit-list__link {
+    width: 45px;
+    height: 42px;
+    margin-top: -1px;
+    margin-left: -1px;
+
+    &:active,
+    &:hover {
+      background-color: #ffffff;
+    }
+
+    &:hover {
+      position: relative;
+      z-index: 2;
+
+      border: 1px solid darken(#cbced9, 30);
+    }
+
+    &:active {
+      color: $main-text-color--dark;
+
+      opacity: 0.4;
+    }
+  }
+
+  .sorting-alphavit-list__link--current {
+    color: $main-text-color--dark;
+
+    background-color: #edeff6;
+    border: 1px solid #cbced9;
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  // Управление через родительский селектор
+
+  .dropdown-countries-list {
+    flex-wrap: wrap;
+    width: 100%;
+
+    border: none;
+
+    .sorting-alphavit-list--hidden-plan-form {
+      width: 30.6%;
+      max-height: none;
+      padding-top: 30px;
+      padding-left: 26px;
+    }
+  }
+
+  // Управление через родительский селектор
+
+  .sorting-alphavit-list--dropdown-countries-list {
+    align-content: flex-start;
+    width: 69.4%;
+    max-height: none;
+    margin-bottom: 0;
+    padding-top: 34px;
+    padding-right: 23px;
+    padding-left: 28px;
+
+    border-right: 1px solid #dcdfea;
+
+    .sorting-alphavit-list__item {
+      width: auto;
+    }
+
+    .sorting-alphavit-list__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 53px;
+      height: 70px;
+      margin-right: 0;
+      padding-bottom: 0;
+
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 0.9;
+      text-align: center;
+      color: $main-text-color--dark;
+      letter-spacing: 2px;
+
+      border: 1px solid #cbced9;
+
+      &:hover {
+        border-color: #959bb2;
+      }
+
+      &:active {
+        color: #ffffff;
+
+        background-color: $main-text-color--dark;
+        opacity: 1;
+      }
+    }
+
+    .sorting-alphavit-list__link--current {
+      color: #ffffff;
+
+      background-color: $main-text-color--dark;
+
+      &:hover {
+        color: $main-text-color--dark;
+      }
+
+      &:active {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  // Управление через родительский селектор
+
+  .dropdown-countries-list {
+    width: 730px;
+
+    .sorting-alphavit-list--hidden-plan-form {
+      display: flex;
+      padding-left: 22px;
+    }
+  }
+
+  .sorting-alphavit-list--hidden-plan-form {
+    .sorting-alphavit-list__item {
+      margin-bottom: 0;
+    }
+  }
+  // Управление через родительский селектор
+
+  .sorting-alphavit-list--dropdown-countries-list {
+    display: flex;
+    width: 69.5%;
+    margin-left: -15px;
+    padding-right: 27px;
+    padding-bottom: 19px;
+
+
+    .sorting-alphavit-list__item {
+      margin-bottom: 15px;
+      margin-left: 15px;
+    }
+
+    .sorting-alphavit-list__link {
+      width: 61px;
+      height: 70px;
+
+      border-radius: 4px;
+    }
+  }
+}

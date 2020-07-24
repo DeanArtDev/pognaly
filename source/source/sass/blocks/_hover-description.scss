@@ -1,0 +1,46 @@
+.hover-description {
+  position: relative;
+
+  display: flex;
+
+  &::after {
+    content: attr(data-hover);
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    z-index: 2;
+
+    display: none;
+    padding: 19px 23px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    text-align: left;
+    color: #ffffff;
+
+    background-color: $background-color-description;
+    border-radius: 4px;
+    transform: translateX(-50%);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+
+    display: none;
+    width: 32px;
+    height: 16px;
+    margin-left: -8px;
+
+    background-color: $background-color-description;
+    transform: rotate(45deg);
+  }
+}
+
+.hover-description:hover::after,
+.hover-description:hover::before {
+  display: block;
+}

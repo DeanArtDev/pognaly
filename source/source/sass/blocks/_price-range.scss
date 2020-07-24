@@ -1,0 +1,106 @@
+.price-range {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+
+    display: block;
+    height: 2px;
+    margin-top: -1px;
+
+    background-color: rgba($main-text-color--dark, 0.2);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 67px;
+
+    display: block;
+    height: 2px;
+    margin-top: -1px;
+
+    background-color: $main-text-color--dark;
+  }
+}
+
+// Палзунок мин и макс
+
+.price-range__button {
+  z-index: 1;
+
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+
+  background-color: $main-text-color--dark;
+  border: none;
+  border-radius: 50%;
+
+  transition: transform 0.3s;
+
+  &:hover,
+  &:active {
+    transform: scale(1.7);
+  }
+
+  &:active {
+    box-shadow: 0 3px 7px 0 rgba(29, 46, 91, 0.35);
+  }
+}
+
+.price-range__button--min {
+  position: absolute;
+  top: 50%;
+  left: 67px;
+
+  margin-top: -6px;
+}
+
+.price-range__button--max {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  margin-top: -6px;
+}
+
+@include media(screen, min, $tablet-width) {
+  .price-range {
+    width: 280px;
+
+    &::before {
+      height: 3px;
+    }
+
+    &::after {
+      height: 3px;
+    }
+  }
+
+  .price-range__button {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .price-range {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .price-range__button--min {
+    left: 59px;
+  }
+}

@@ -1,0 +1,95 @@
+.feedback {
+  color: #ffffff;
+}
+
+.feedback__title {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.38;
+  text-align: center;
+
+  &--visible-desktop {
+    display: none;
+  }
+}
+
+.feedback__link {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.38;
+  color: $second-color;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  // Hover and active for a text
+
+  &:hover,
+  &:active {
+    color: $second-color--medium;
+
+    &::before {
+      fill: $second-color--medium;
+    }
+  }
+
+  &:active {
+    color: rgba($second-color, 0.3);
+  }
+
+  // Hover and active for icons
+
+  &:hover .icon__phone,
+  &:active .icon__phone,
+  &:hover .icon__email,
+  &:active .icon__email {
+    fill: $second-color--medium;
+  }
+
+  &:active .icon__phone,
+  &:active .icon__email {
+    opacity: 0.3;
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .feedback__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    font-size: 28px;
+  }
+
+  .feedback__title br {
+    display: none;
+  }
+
+  .feedback__link {
+    font-size: 28px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .feedback__user-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 149px;
+  }
+
+  .feedback__title {
+    display: none;
+    width: 100%;
+    margin-bottom: 45px;
+
+    &--visible-desktop {
+      display: block;
+    }
+  }
+
+  .feedback__link:nth-child(2n+1) {
+    margin-right: 111px;
+  }
+}

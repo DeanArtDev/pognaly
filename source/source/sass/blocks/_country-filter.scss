@@ -1,0 +1,191 @@
+.country-filter {
+  margin-top: -60px;
+  z-index: 4;
+  position: relative;
+
+  background-color: #e2e5f2;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.country-filter__title {
+  position: relative;
+
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 27px;
+
+  font-size: 16px;
+  line-height: 1.38;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 15px;
+    height: 100%;
+
+    background: url("../img/filter.svg") no-repeat center center;
+  }
+}
+
+.country-filter__add-desktop {
+  display: none;
+}
+
+.conuntry-filter__list {
+  display: none;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  list-style: none;
+}
+
+.conuntry-filter__item {
+  margin-bottom: 8px;
+}
+
+.country-filter__wrapper {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 14px;
+  padding-right: 25px;
+  padding-bottom: 24px;
+  padding-left: 25px;
+}
+
+.conuntry-filter__link {
+  margin-bottom: 14px;
+
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  color: rgba(25, 33, 68, 0.3);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    color: rgba(25, 33, 68, 0.6);
+  }
+
+  &:active {
+    color: rgba(25, 33, 68, 1);
+  }
+}
+
+.conuntry-filter__link--current {
+  color: rgba(25, 33, 68, 1);
+}
+
+.country-filter__container-open,
+.country-filter__container-nojs {
+  padding-bottom: 139px;
+}
+
+// Открытие / закрытие фильтрации по странам
+
+.country-filter__container-close + .country-filter__wrapper {
+  display: none;
+}
+
+.country-filter__container-open + .country-filter__wrapper--open {
+  display: flex;
+}
+
+.country-filter__container-open > .conuntry-filter__list,
+.country-filter__container-nojs > .conuntry-filter__list {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+
+  display: flex;
+}
+
+@include media(screen, min, $tablet-width) {
+  .country-filter {
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+
+  .country-filter__wrapper {
+    padding-right: 45px;
+    padding-bottom: 75px;
+    padding-left: 75px;
+  }
+
+  .country-filter__title {
+    display: none;
+  }
+
+  .conuntry-filter__list {
+    display: flex;
+    flex-direction: row;
+    max-width: 410px;
+  }
+
+  .country-filter__container-open,
+  .country-filter__container-nojs {
+    padding-bottom: 31px;
+  }
+
+  // Возвращение ^conuntry-filter__list в поток
+
+  .country-filter__container-open > .conuntry-filter__list,
+  .country-filter__container-nojs > .conuntry-filter__list {
+    position: static;
+
+    display: flex;
+  }
+
+  .conuntry-filter__item {
+    margin-right: 27px;
+    margin-bottom: 5px;
+  }
+
+  .conuntry-filter__link {
+    font-size: 20px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .country-filter__title {
+    display: flex;
+    align-items: center;
+    margin-top: -4px;
+    margin-right: 34px;
+    padding-left: 43px;
+
+    font-size: 20px;
+
+    &::before {
+      top: -1px;
+
+      width: 23px;
+    }
+  }
+
+  .country-filter__add-desktop {
+    display: inline;
+  }
+
+  .conuntry-filter__list {
+    margin-right: auto;
+  }
+
+  .country-filter__wrapper {
+    padding-top: 8px;
+    padding-right: 60px;
+    padding-bottom: 75px;
+    padding-left: 60px;
+  }
+}

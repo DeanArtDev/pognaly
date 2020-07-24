@@ -1,0 +1,85 @@
+.companions-result {
+  padding-top: 14px;
+  padding-bottom: 96px;
+}
+
+// ^tags-list
+
+.companions-result__tags-list {
+  width: 215px;
+  margin-right: 0;
+  margin-bottom: 22px;
+  margin-left: 0;
+  padding-left: 25px;
+}
+
+// ^show-more
+
+.companions-result__show-more {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 21px;
+}
+
+// Описание разделов поверх бордера
+
+.companions-result--subtitle {
+  &::before {
+    position: absolute;
+
+    display: block;
+
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1;
+    color: $main-text-color;
+
+    background-color: #ffffff;
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .companions-result {
+    padding-top: 27px;
+    padding-bottom: 112px;
+  }
+
+  // ^tags-list
+
+  .companions-result__tags-list {
+    position: absolute;
+    top: 79px;
+    left: 260px;
+
+    width: 230px;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  // ^show-more
+
+  .companions-result__show-more {
+    margin-bottom: 47px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .companions-result {
+    width: 950px;
+    padding-top: 0;
+    padding-bottom: 127px;
+  }
+
+  // tags-list
+
+  .companions-result__tags-list {
+    top: 94px;
+    left: 347px;
+  }
+
+  // ^show-more
+
+  .companions-result__show-more {
+    margin-bottom: 65px;
+  }
+}

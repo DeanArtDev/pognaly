@@ -1,0 +1,83 @@
+.sorting-results-list {
+  display: none;
+  padding-left: 0;
+
+  list-style: none;
+}
+
+.sorting-results-list__link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  color: $main-text-color;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+// Показываем списки городов через управляющий класс sorting-alphavit-list__link--current
+
+.sorting-alphavit-list__link--current + .sorting-results-list {
+  display: block;
+  width: 100%;
+}
+
+.sorting-alphavit-list__link--current-form + .sorting-results-list--dropdown {
+  display: block;
+  width: 100%;
+}
+
+.sorting-results-list--dropdown .sorting-results-list__link {
+  &:hover {
+    color: $main-text-color--dark;
+
+    opacity: 1;
+  }
+
+  &:active {
+    color: $main-text-color--dark;
+
+    opacity: 0.3;
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .sorting-results-list__link {
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .sorting-alphavit-list__link--current + .sorting-results-list {
+    top: 20px;
+    right: 140px;
+    bottom: auto;
+    left: auto;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .sorting-alphavit-list__item .sorting-results-list {
+    position: static;
+
+    display: block;
+  }
+
+  .sorting-alphavit-list__item {
+    margin-bottom: 57px;
+  }
+
+  .sorting-alphavit-list__link + .sorting-results-list--dropdown {
+    display: none;
+  }
+
+  .sorting-alphavit-list__link--current-form + .sorting-results-list--dropdown {
+    display: block;
+  }
+}

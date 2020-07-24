@@ -1,0 +1,122 @@
+.user-tags {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  outline: none;
+}
+
+.user-tags__subtitle {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-right: 17px;
+  padding-left: 17px;
+
+  font-size: 16px;
+  line-height: 1.13;
+  text-align: center;
+  color: $main-text-color--dark;
+  text-transform: uppercase;
+
+  background-color: #edeff6;
+  transform: translateX(-50%);
+}
+
+.user-tags__content {
+  width: 100%;
+  padding-top: 21px;
+  padding-right: 24px;
+  padding-bottom: 22px;
+  padding-left: 24px;
+  overflow-y: auto;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  text-align: left;
+  color: $main-text-color;
+
+  background-color: transparent;
+  border: 1px solid #cbced9;
+  border-radius: 10px;
+  outline: none;
+
+  resize: none;
+
+  @include font-family("BloggerSans", "Tahoma");
+
+  &:hover {
+    border-color: #aeb4cb;
+  }
+
+  &:focus {
+    border-color: $main-color;
+  }
+}
+
+// Ховер и фокус для textarea
+
+.user-tags__content:focus::placeholder {
+  color: $main-text-color;
+}
+
+// ^profile-description
+
+.user-tags--profile-description {
+  margin-bottom: 25px;
+}
+
+@include media(screen, min, $tablet-width) {
+  .user-tags {
+    padding: 0;
+  }
+
+  .user-tags__subtitle {
+    position: absolute;
+    bottom: -10%;
+    top: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 0.9;
+    letter-spacing: 2px;
+  }
+
+  .user-tags__content {
+    height: 94px;
+    padding-top: 31px;
+    padding-right: 38px;
+    padding-bottom: 12px;
+    padding-left: 38px;
+
+    font-size: 20px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .user-tags--profile-description {
+    width: auto;
+    min-width: 730px;
+    max-width: 850px;
+    margin-left: 64px;
+  }
+
+  .user-tags__subtitle {
+    left: 21px;
+
+    transform: none;
+  }
+}

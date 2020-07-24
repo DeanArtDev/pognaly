@@ -1,0 +1,73 @@
+.icon {
+  &--bg {
+    background-color: #121936;
+  }
+}
+
+.icon__wrapper {
+  display: flex;
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  &--feedback {
+    margin-right: 16px;
+  }
+}
+
+.icon__phone {
+  width: 18px;
+  height: 18px;
+  margin: auto;
+  fill: #ffd74b;
+}
+
+.icon__email {
+  width: 18px;
+  height: 13px;
+  margin: auto;
+  fill: #ffd74b;
+}
+
+@include media(screen, min, $tablet-width) {
+  .icon__wrapper {
+    width: 67px;
+    height: 67px;
+
+    &--feedback {
+      margin-right: 24px;
+    }
+  }
+
+  .icon__phone {
+    width: 27px;
+    height: 27px;
+  }
+
+  .icon__email {
+    width: 27px;
+    height: 19px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .icon__wrapper {
+    width: 90px;
+    height: 90px;
+
+    &--feedback {
+      margin-right: 31px;
+    }
+  }
+
+  .icon__phone {
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon__email {
+    width: 36px;
+    height: 26px;
+  }
+}

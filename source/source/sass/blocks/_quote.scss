@@ -1,0 +1,70 @@
+.quote {
+  width: auto;
+  margin-right: auto;
+  padding-left: 25px;
+
+  font-size: 16px;
+  line-height: 1.38;
+  color: #ffffff;
+}
+
+.quote--advantages {
+  margin-bottom: 45px;
+}
+
+.quote__text {
+  width: 150px;
+  margin: 0;
+  margin-bottom: 18px;
+
+  font-weight: 300;
+}
+
+.quote__author {
+  display: block;
+  width: 175px;
+
+  font-weight: 700;
+}
+
+.quote__autor-name {
+  font-style: normal;
+}
+
+
+@include media(screen, min, $tablet-width) {
+  .quote--advantages {
+    padding-left: 34px;
+  }
+
+  .quote__text {
+    width: 270px;
+    margin-bottom: 42px;
+
+    font-size: 28px;
+    line-height: 1.18;
+  }
+
+  .quote__author {
+    width: 257px;
+
+    font-size: 21px;
+    line-height: 1.28;
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .quote--advantages {
+    margin-bottom: 210px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .quote--advantages {
+    margin: 0;
+    margin-bottom: 113px;
+    margin-left: auto;
+    padding-top: 12px;
+    padding-right: 16px;
+  }
+}

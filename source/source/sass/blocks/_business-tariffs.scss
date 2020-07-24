@@ -1,0 +1,83 @@
+.business-tariffs {
+  position: relative;
+
+  width: 270px;
+  margin-bottom: 33px;
+  padding-right: 25px;
+  padding-bottom: 60px;
+  padding-left: 25px;
+
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px 0 rgba(29, 46, 91, 0.1);
+}
+
+.business-tariffs__button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  width: 100%;
+  padding: 20px;
+
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  color: $main-text-color--dark;
+  text-transform: uppercase;
+
+  background-color: #f3f4f8;
+  border: none;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  @include font-family("BloggerSans", "Tahoma");
+
+  &:hover,
+  &:active {
+    background-color: #edeff6;
+  }
+
+  &:active {
+    color: rgba(29, 46, 91, 0.3);
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .business-tariffs {
+    width: 688px;
+    padding-top: 16px;
+    padding-right: 90px;
+    padding-bottom: 108px;
+    padding-left: 90px;
+
+    border-radius: 30px;
+  }
+
+  .business-tariffs__table {
+    margin-bottom: 50px;
+  }
+
+  .business-tariffs__button {
+    padding: 45px;
+    padding-top: 40px;
+
+    font-size: 24px;
+    line-height: 1;
+    text-transform: none;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .business-tariffs {
+    width: 750px;
+    padding-top: 47px;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+
+  .business-tariffs__table {
+    width: 100%;
+  }
+}

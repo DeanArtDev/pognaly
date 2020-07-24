@@ -1,0 +1,317 @@
+.type-travel,
+.type-travel__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  border: none;
+}
+
+.type-travel__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 120px;
+  margin: 0 auto;
+}
+
+.type-travel__item {
+  position: relative;
+}
+
+.type-travel__label--bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+
+  background-color: #ffffff;
+  border-radius: 50%;
+
+  // Ховеры для checkboxis (checked and unchecked)
+
+  &:hover {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  &:active {
+    background-color: #e2e5f1;
+  }
+}
+
+// Центрует первую иконку
+
+.type-travel__icon--center {
+  margin-right: 2px;
+}
+
+.type-travel svg {
+  fill: rgba(29, 46, 91, 0.15);
+}
+
+.type-travel__icon--companion-form {
+  fill: rgba(#1d2e5b, 0.15);
+}
+
+/* Изменение цвета если checkbox is checked и focus*/
+
+.type-travel__input {
+  &:focus + label {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 0 3px #ffffff,
+      0 0 0 4px $main-color;
+  }
+}
+
+.type-travel__input:checked + .type-travel__label {
+  .type-travel__icon {
+    fill: #1d2e5b;
+  }
+}
+
+// is unchecked
+
+.type-travel__label--bg:hover .type-travel__icon {
+  fill: rgba(#101e44, 0.3);
+}
+
+.type-travel__label--bg:active .type-travel__icon {
+  fill: rgba(#101e44, 0.1);
+}
+
+// is checked
+
+.type-travel__input:checked + .type-travel__label--bg:hover,
+.type-travel__input:checked + .type-travel__label--profile-description:hover {
+  .type-travel__icon {
+    fill: #101e44;
+  }
+}
+
+.type-travel__input:checked + .type-travel__label--bg:active,
+.type-travel__input:checked + .type-travel__label--profile-description:active {
+  .type-travel__icon {
+    fill: rgba(#101e44, 0.3);
+  }
+}
+
+// ^companions-result
+
+.type-travel__label--companions-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 32px;
+
+  background-color: #edeff6;
+  border-radius: 50%;
+}
+
+.type-travel__list--companions-result {
+  justify-content: flex-start;
+  width: auto;
+  max-width: 190px;
+  padding-left: 25px;
+}
+
+// ^profile-description
+
+.type-travel--profile-description {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 9px;
+  padding-bottom: 14px;
+
+  border: 1px solid #cbced9;
+  border-radius: 10px;
+}
+
+.type-travel__subtitle {
+  margin-top: -18px;
+  margin-bottom: 5px;
+  padding-right: 15px;
+  padding-left: 14px;
+
+  font-size: 16px;
+  line-height: 1.13;
+  color: $main-text-color--dark;
+  text-transform: uppercase;
+
+  background-color: #edeff6;
+}
+
+.type-travel__list--profile-description {
+  justify-content: initial;
+  width: auto;
+}
+
+.type-travel__label--profile-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+
+  background-color: #ffffff;
+  border-radius: 50%;
+
+  &:hover {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  &:active {
+    background-color: #e2e5f1;
+  }
+}
+
+.type-travel__icon--profile-description {
+  margin-right: 3px;
+}
+
+@include media(screen, min, $tablet-width) {
+  .companion-form__transport .type-travel__item {
+    margin-right: 12px;
+  }
+
+  .type-travel__label--bg {
+    width: 43px;
+    height: 43px;
+  }
+
+  .type-travel__icon--plane {
+    width: 19px;
+    height: 21px;
+  }
+
+  .type-travel__icon--bus {
+    width: 17px;
+    height: 21px;
+  }
+
+  .type-travel__icon--bike {
+    width: 24px;
+    height: 21px;
+  }
+
+  .type-travel__icon--run {
+    width: 20px;
+    height: 21px;
+  }
+
+  // ^companions-result
+
+  .type-travel__label--companions-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33px;
+    height: 32px;
+
+    background-color: transparent;
+  }
+
+  .type-travel__list--companions-result {
+    flex-direction: column;
+    width: auto;
+    max-width: initial;
+    margin-bottom: 5px;
+    padding-left: 0;
+  }
+
+  .type-travel__icon--plane-companions-result {
+    width: 19px;
+    height: 21px;
+  }
+
+  .type-travel__icon--bus-companions-result {
+    width: 17px;
+    height: 21px;
+  }
+
+  .type-travel__icon--bike-companions-result {
+    width: 24px;
+    height: 21px;
+  }
+
+  .type-travel__icon--run-companions-result {
+    width: 20px;
+    height: 21px;
+  }
+
+  .type-travel__icon--center {
+    margin-top: -5px;
+    margin-right: 4px;
+  }
+
+  // ^profile-description
+  .type-travel--profile-description {
+    position: absolute;
+    top: 114px;
+    left: 50%;
+
+    justify-content: initial;
+    width: 310px;
+    min-height: 94px;
+    margin-left: -156px;
+    padding-top: 24px;
+  }
+
+  .type-travel__label--profile-description {
+    width: 43px;
+    height: 43px;
+  }
+
+  .type-travel__list--profile-description {
+    justify-content: space-between;
+    min-width: 196px;
+  }
+
+  .type-travel__subtitle {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+
+    margin: 0;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 0.9;
+    letter-spacing: 2px;
+
+    transform: translateX(-50%);
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .type-travel__icon--center {
+    margin-top: 0;
+    margin-right: 5px;
+  }
+  // ^companions-result
+
+  .type-travel__list--companions-result {
+    flex-direction: row;
+  }
+
+  // ^profile-description
+  .type-travel--profile-description {
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 385px;
+    max-height: 94px;
+    margin-left: 0;
+  }
+
+  .type-travel__list--profile-description {
+    min-width: auto;
+  }
+}

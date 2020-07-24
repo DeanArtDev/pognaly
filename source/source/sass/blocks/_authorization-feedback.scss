@@ -1,0 +1,18 @@
+.authorization-feedback {
+  position: relative;
+  z-index: 5;
+
+  margin-top: -50px;
+
+  background-color: #192144;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+@include media(screen, min, $tablet-width) {
+  .authorization-feedback {
+    background-color: #192144;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+}

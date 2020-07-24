@@ -1,0 +1,142 @@
+.direction {
+  position: relative;
+  z-index: 8;
+
+  margin-top: -50px;
+
+  background-color: $background-color-light;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.direction__item {
+  margin-bottom: 9px;
+}
+
+.direction__wrapper {
+  margin-bottom: 61px;
+}
+
+.direction__title {
+  margin-top: 0;
+  margin-bottom: 19px;
+}
+
+.direction__link {
+  padding-left: 25px;
+
+  font-weight: 700;
+  font-size: 24px;
+  color: #ff8d30;
+  text-decoration: none;
+}
+
+.card-direction__picture {
+  width: 270px;
+  height: 110px;
+}
+
+.direction__content {
+  width: 220px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 25px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.38;
+  color: #444444;
+}
+
+.direction__list {
+  position: relative;
+
+  width: auto;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+
+    display: block;
+    width: 100%;
+    height: 60px;
+
+    background-image: linear-gradient(180deg, transparent 0%, $background-color-light 80%);
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .direction {
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+
+  .direction__list {
+    margin-bottom: 54px;
+
+    &::after {
+      height: 80px;
+    }
+  }
+
+  .direction__wrapper {
+    margin-bottom: 107px;
+  }
+
+  .direction__item {
+    margin-bottom: 12px;
+  }
+
+  .direction__title {
+    margin-bottom: 58px;
+  }
+
+  .direction__link {
+    padding: 0;
+
+    font-size: 45px;
+  }
+
+  .direction__content {
+    width: 340px;
+    padding: 0;
+
+    font-size: 28px;
+    line-height: 1.18;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .direction__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    order: 2;
+    width: 50%;
+    margin-bottom: 0;
+    padding-top: 4px;
+    padding-left: 172px;
+  }
+
+  .direction__list {
+    width: 560px;
+    margin: 0;
+  }
+
+  .direction__title {
+    margin-bottom: 56px;
+  }
+
+  .direction__item {
+    margin-bottom: 10px;
+  }
+
+  .direction__content {
+    margin-bottom: auto;
+  }
+}

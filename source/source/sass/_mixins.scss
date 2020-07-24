@@ -1,0 +1,22 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $font-display: auto) {
+  @font-face {
+    font-style: $style;
+    font-weight: $weight;
+    font-family: $font-family;
+    font-display: $font-display;
+
+    src: url("#{$file-path}.woff2") format("woff2"),
+      url("#{$file-path}.woff") format("woff");
+  }
+}
+
+@mixin font-family($font-family: "BloggerSans", $alternative-font: "Tahoma") {
+  font-family: $font-family, $alternative-font, sans-serif;
+}
+
+
+@mixin media($screen, $type-width, $width) {
+  @media #{$screen} and (#{$type-width}-width: #{$width}px) {
+    @content;
+  }
+}

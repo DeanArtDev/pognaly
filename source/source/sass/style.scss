@@ -1,0 +1,77 @@
+@import "_variables";
+@import "_mixins";
+@import "_fonts";
+@import "_global";
+
+// Blocks
+
+/* ==========================================================================
+   Не сортировать блоки, порядок имеет значение !!!!!!!!!
+   ========================================================================== */
+
+// common blosks
+@import "blocks/_card-level";
+
+
+// ^index.html and common blocks
+@import "blocks/_button";
+@import "blocks/_logo";
+@import "blocks/_site-list";
+@import "blocks/_main-navigation";
+@import "blocks/_container";
+@import "blocks/_user-list";
+@import "blocks/_active-button";
+@import "blocks/_burger-menu-button";
+@import "blocks/_advantages";
+@import "blocks/_quote";
+@import "blocks/_advantages-list";
+@import "blocks/_about-service";
+@import "blocks/_direction";
+@import "blocks/_card-direction";
+@import "blocks/_countrys-list";
+@import "blocks/_page-header";
+@import "blocks/_tags-list";
+@import "blocks/_companions";
+@import "blocks/_paid-subscription";
+@import "blocks/_authorization-feedback";
+@import "blocks/_add-profile";
+@import "blocks/_authorization";
+@import "blocks/_feedback";
+@import "blocks/_our-location";
+@import "blocks/_map";
+@import "blocks/_social-network-list";
+@import "blocks/_page-footer";
+@import "blocks/_copyright";
+@import "blocks/_modal";
+@import "blocks/_companions-catalog";
+@import "blocks/_companions-result";
+@import "blocks/_card-companions";
+@import "blocks/_companions-selection";
+@import "blocks/_profile-card";
+@import "blocks/_pagination";
+@import "blocks/_page-main";
+@import "blocks/_subscription-table";
+@import "blocks/_business-tariffs";
+@import "blocks/_icon";
+@import "blocks/_hover-description";
+@import "blocks/_burger-menu";
+@import "blocks/_type-travel";
+
+// only ^catalog.html blocks
+@import "blocks/_country-filter";
+@import "blocks/_catalog-button";
+@import "blocks/_sorting-alphavit-list";
+@import "blocks/_sorting-results-list";
+@import "blocks/_companion-form";
+@import "blocks/_price-range";
+@import "blocks/_likes";
+
+// only ^form.html
+
+@import "blocks/_profile-description";
+@import "blocks/_user-tags";
+@import "blocks/_user-plans";
+@import "blocks/_user-direction";
+@import "blocks/_add-plan";
+@import "blocks/_plan-form";
+@import "blocks/_dropdown-countries-list";

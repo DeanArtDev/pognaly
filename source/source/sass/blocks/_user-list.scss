@@ -1,0 +1,251 @@
+.user-list {
+  width: 100%;
+
+  list-style: none;
+
+  &--page-header {
+    position: absolute;
+    bottom: -403px;
+    left: 0;
+    z-index: 11;
+
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--catalog {
+    display: none;
+  }
+}
+
+.user-list__item--grow {
+  flex-grow: 1;
+}
+
+.user-list__link {
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+
+  // Контактные ссылки в бугер меню
+
+  &--burger-menu {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+
+    font-size: 16px;
+    line-height: 1.38;
+    color: $main-color--light;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      color: rgba(25, 33, 68, 0.6);
+    }
+
+    &:active {
+      color: rgba(25, 33, 68, 0.3);
+    }
+
+    &:hover .icon__phone,
+    &:hover .icon__email {
+      fill: rgba(#ffd74b, 0.6);
+    }
+
+    &:active .icon__phone,
+    &:active .icon__email {
+      fill: rgba(#ffd74b, 0.3);
+    }
+  }
+}
+
+// Конки с opacity ховером
+
+.user-list__email {
+  &--page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $second-color--medium;
+
+    &:hover,
+    &:active {
+      background-color: $second-color--darkest;
+    }
+
+    &:active::after {
+      opacity: 0.3;
+    }
+
+    &::after {
+      content: "";
+
+      display: block;
+      width: 18px;
+      height: 18px;
+
+      background-image: url("../img/topmenu-mail.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 18px 14px;
+    }
+  }
+}
+
+.user-list__phone {
+  &--page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $second-color--darkest;
+
+    &:hover,
+    &:active {
+      background-color: $hover-button-color;
+    }
+
+    &:active::after {
+      opacity: 0.3;
+    }
+
+    &::after {
+      content: "";
+
+      display: block;
+      width: 18px;
+      height: 18px;
+
+      background-image: url("../img/topmenu-phone.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 18px 18px;
+    }
+  }
+}
+
+.user-list__icon {
+  &::before {
+    content: "";
+
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin-right: 16px;
+
+    background-color: #121936;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 18px 18px;
+    border-radius: 50%;
+  }
+
+  &--map-marker {
+    &::before {
+      background-image: url("../img/contacts-location.svg");
+    }
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .user-list {
+    &--burger-menu {
+      padding-left: 0;
+    }
+  }
+
+  .user-list--page-header {
+    position: static;
+
+    width: auto;
+  }
+
+  .user-list__email,
+  .user-list__phone {
+    display: none;
+  }
+
+  .user-list--catalog {
+    display: flex;
+  }
+
+  .user-list__link {
+    &--burger-menu {
+      font-size: 28px;
+      line-height: 1;
+    }
+  }
+
+  .user-list__phone {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .user-list__email {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .user-list__icon {
+    &--email::before {
+      background-size: 27px 19px;
+    }
+
+    &--phone::before {
+      background-size: 27px 27px;
+    }
+
+    &::before {
+      width: 67px;
+      height: 67px;
+      margin-right: 24px;
+    }
+
+    &--map-marker::before {
+      margin-right: 26px;
+
+      background-size: 21px 31px;
+    }
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .user-list__email,
+  .user-list__phone {
+    display: flex;
+  }
+
+  .user-list__link {
+    width: 50px;
+    height: 50px;
+  }
+
+  .user-list__icon {
+    &--email::before {
+      background-size: 36px 26px;
+    }
+
+    &--phone::before {
+      background-size: 36px 36px;
+    }
+
+    &--map-marker::before {
+      background-size: 28px 43px;
+    }
+
+    &::before {
+      width: 90px;
+      height: 90px;
+      margin-right: 34px;
+    }
+  }
+}

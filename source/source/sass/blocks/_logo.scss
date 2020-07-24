@@ -1,0 +1,25 @@
+.logo {
+  display: flex;
+  flex-wrap: wrap;
+  color: $second-color;
+}
+
+.logo img {
+  display: block;
+  width: 100px;
+  height: 19px;
+}
+
+@include media(screen, min, $tablet-width) {
+  .logo img {
+    width: 166px;
+    height: 42px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .logo img {
+    width: 200px;
+    height: 52px;
+  }
+}

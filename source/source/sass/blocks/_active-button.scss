@@ -1,0 +1,43 @@
+.active-button {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.2;
+  text-align: center;
+  color: $main-color;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background-color: $second-color;
+  border-radius: 25px;
+
+  &--user-list {
+    display: block;
+    padding: 11px;
+    padding-bottom: 9px;
+
+    &:hover,
+    &:active {
+      background-color: $second-color--medium;
+    }
+
+    &:active {
+      color: rgba(22, 28, 54, 0.3);
+    }
+  }
+
+  &--profile-card {
+    display: block;
+    width: auto;
+    padding: 10px 0;
+  }
+}
+
+
+@include media(screen, min, $tablet-width) {
+  .active-button--user-list {
+    min-width: 188px;
+
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}

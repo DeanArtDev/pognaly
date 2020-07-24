@@ -1,0 +1,307 @@
+.button {
+  position: relative;
+
+  display: block;
+  padding: 22px;
+
+  font-weight: 700;
+  font-size: 18px;
+  color: $main-text-color--dark;
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  // Кнопки с общим ховером
+
+  &:hover,
+  &:active {
+    background-color: $second-color--medium;
+  }
+
+  &:active {
+    color: rgba(29, 46, 91, 0.3);
+  }
+
+  &:active .button__arrow {
+    opacity: 0.3;
+  }
+
+  // Кнопка с белым ховером на стрелку
+
+  &:hover > .button__arrow--our-location,
+  &:active > .button__arrow--our-location {
+    fill: white;
+  }
+
+  &--yellow {
+    background-color: $second-color;
+  }
+
+  &--direction {
+    position: absolute;
+    bottom: 30px;
+
+    width: calc(100% - 50px);
+  }
+
+  &--our-location {
+    width: auto;
+    padding: 19px;
+    padding-right: 40px;
+
+    border: solid 3px $main-color--light;
+    border-radius: 10px;
+
+    // Кнопка с ховером на темный фон и белую стрелку
+
+    &:hover {
+      color: #ffffff;
+
+      background-color: $main-color--light;
+    }
+
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &--about-service {
+    display: none;
+  }
+
+  &--companions {
+    position: absolute;
+    bottom: 29px;
+
+    width: calc(100% - 50px);
+  }
+
+  &--authorization {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    min-width: 60px;
+    height: 100%;
+
+    font-size: 0;
+    text-align-last: left;
+
+    background-color: $second-color;
+    border: none;
+
+    @include font-family("BloggerSans", "Tahoma");
+  }
+}
+
+// ^plan-form
+
+.button--plan-form {
+  display: block;
+  width: 230px;
+  margin-left: -5px;
+  padding: 11px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  border: none;
+  border-radius: 20px;
+
+  @include font-family("BloggerSans", "Tahoma");
+}
+
+.button--plan-form > .button__arrow {
+  display: none;
+}
+
+.button--plan-form-back {
+  margin-top: 7px;
+  padding: 5px;
+
+  font-size: 17px;
+  line-height: 1.76;
+  text-align: center;
+  color: $main-color;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: transparent;
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.button--plan-form-back > .button__arrow {
+  display: none;
+}
+
+// ^arrow
+
+.button__arrow {
+  position: absolute;
+  top: 50%;
+  right: 23px;
+
+  margin-top: -7px;
+}
+
+.button__arrow--left {
+  left: 23px;
+}
+
+@include media(screen, min, $tablet-width) {
+  .button {
+    &::after {
+      right: 35px;
+    }
+
+    &--direction {
+      bottom: 81px;
+
+      width: calc(100% - 150px);
+      padding: 28px 32px;
+
+      font-size: 24px;
+
+      border-radius: 20px;
+    }
+
+    &--about-service {
+      display: block;
+      width: 274px;
+      padding: 28px;
+      padding-bottom: 29px;
+      padding-left: 33px;
+
+      font-size: 24px;
+
+      border-radius: 20px;
+    }
+
+    &--companions {
+      bottom: 88px;
+
+      width: calc(100% - 150px);
+      padding: 28px;
+      padding-left: 33px;
+
+      font-size: 24px;
+
+      border-radius: 20px;
+    }
+
+    &--authorization {
+      min-width: 82px;
+
+      border-radius: 0;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    &--our-location {
+      padding-top: 25px;
+      padding-right: 60px;
+      padding-bottom: 26px;
+      padding-left: 33px;
+
+      font-size: 24px;
+
+      border-radius: 20px;
+    }
+  }
+
+  // ^plan-form
+
+  .button--plan-form {
+    display: inline-block;
+    min-width: 285px;
+    margin-left: 0;
+    padding-top: 28px;
+    padding-right: 28px;
+    padding-bottom: 29px;
+    padding-left: 33px;
+
+    line-height: 1;
+    text-align: left;
+    text-transform: none;
+
+    border-radius: 20px;
+  }
+
+  .button--plan-form > .button__arrow {
+    display: block;
+  }
+
+  .button--plan-form-back {
+    display: inline-block;
+    margin-left: 41px;
+    padding-right: 0;
+    padding-left: 55px;
+
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1;
+    text-align: right;
+    color: $main-color;
+    text-transform: none;
+  }
+
+  .button--plan-form-back > .button__arrow--left {
+    display: block;
+  }
+
+  // ^arrow
+
+  .button__arrow {
+    right: 36px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .button--direction {
+    position: relative;
+    bottom: auto;
+
+    min-width: 274px;
+    margin-top: auto;
+    padding: 30px 36px;
+    padding-bottom: 28px;
+  }
+
+  .button--companions {
+    position: relative;
+    bottom: auto;
+
+    max-width: 280px;
+  }
+
+  .button--authorization {
+    padding-right: 150px;
+    padding-left: 37px;
+
+    font-size: 24px;
+  }
+
+  .button--our-location {
+    margin-left: auto;
+  }
+
+  // ^plan-form
+
+  .button--plan-form-back {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-left: auto;
+  }
+
+  // arrow
+
+  .button__arrow--left {
+    left: 20px;
+  }
+}

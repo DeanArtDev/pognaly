@@ -1,0 +1,38 @@
+.copyright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__description {
+  padding-top: 4px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  color: #444444;
+}
+
+@include media(screen, min, $tablet-width) {
+  .copyright {
+    border: none;
+    padding-top: 7px;
+  }
+
+  .copyright__description {
+    padding-top: 0;
+    font-size: 20px;
+    margin-right: 24px;
+  }
+}

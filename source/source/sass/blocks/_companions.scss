@@ -1,0 +1,151 @@
+.companions {
+  position: relative;
+  z-index: 7;
+
+  margin-top: -50px;
+
+  color: white;
+
+  background-color: #192144;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.companions__wrapper {
+  margin-bottom: 56px;
+}
+
+.companions__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-left: 25px;
+}
+
+.companions__link {
+  font-weight: 700;
+  font-size: 24px;
+  color: #ff8d30;
+  text-decoration: none;
+}
+
+.companions__content {
+  width: 240px;
+  margin-bottom: 22px;
+  padding-left: 25px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.38;
+
+  &--bold {
+    font-weight: 700;
+  }
+}
+
+.companions__content br {
+  display: none;
+}
+
+.companions__list {
+  margin: 0 auto;
+  padding: 0;
+
+  list-style: none;
+}
+
+.companions__item {
+  margin-bottom: 10px;
+}
+
+// ^compnions-result
+
+.companions__list--companions-result {
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+@include media(screen, min, $tablet-width) {
+  .companions {
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+
+  .companions__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .companions__wrapper {
+    width: 65%;
+    margin-bottom: 60px;
+  }
+
+  .companions__title {
+    margin-bottom: 59px;
+    padding-left: 0;
+  }
+
+  .companions__content {
+    width: 425px;
+    margin-bottom: 39px;
+    padding-left: 0;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    &--bold {
+      font-size: 21px;
+    }
+  }
+
+  .companions__content br {
+    display: inline;
+  }
+
+  .companions__link {
+    font-size: 45px;
+  }
+
+  .companions__item {
+    width: 285px;
+  }
+
+  // ^compnions-result
+
+  .companions__list--companions-result {
+    flex-direction: column;
+    margin-bottom: 41px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .companions__list {
+    width: 630px;
+    padding-top: 10px;
+  }
+
+  .companions__wrapper {
+    width: 49%;
+    margin-right: 7px;
+  }
+
+  .companions__item {
+    width: 50%;
+  }
+
+  .companions__content {
+    &--bold {
+      margin-bottom: 86px;
+    }
+  }
+
+  // ^compnions-result
+
+  .companions__list--companions-result {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 62px;
+    padding-top: 0;
+  }
+}

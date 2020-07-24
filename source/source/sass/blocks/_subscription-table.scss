@@ -1,0 +1,144 @@
+.subscription-table {
+  width: 100%;
+  margin-bottom: 32px;
+  margin-left: -2px;
+
+  border-collapse: collapse;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.38;
+  text-align: left;
+  color: $main-text-color;
+}
+
+.subscription-table__wrapper {
+  counter-reset: number-row;
+}
+
+.subscription-table__row {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  width: 82.6%;
+  padding-top: 9px;
+  padding-bottom: 10px;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:last-of-type {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  &::after {
+    content: counter(number-row);
+    position: absolute;
+    top: 4px;
+    right: -44px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+
+    font-weight: 400;
+    line-height: 0.88;
+    text-align: center;
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    counter-increment: number-row;
+  }
+
+  &--business-tariffs {
+    width: auto;
+    margin-left: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.subscription-table__row:nth-of-type(3n+1) {
+  &::after {
+    background-color: $second-color--dark;
+  }
+}
+
+.subscription-table__row:nth-of-type(3n+2) {
+  &::after {
+    background-color: $second-color--medium;
+  }
+}
+
+.subscription-table__row:nth-of-type(3n+3) {
+  &::after {
+    background-color: $second-color;
+  }
+}
+
+.subscription-table__header {
+  display: block;
+  width: 100%;
+  margin-bottom: -2px;
+
+  font-weight: inherit;
+  text-align: left;
+}
+
+.subscription-table__date {
+  display: block;
+}
+
+@include media(screen, min, $tablet-width) {
+  .subscription-table {
+    margin-bottom: 56px;
+  }
+
+  .subscription-table__header {
+    width: auto;
+  }
+
+  .subscription-table__date {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  .subscription-table__row {
+    justify-content: space-between;
+    width: auto;
+    margin-bottom: 6px;
+    padding-left: 2px;
+
+    font-size: 28px;
+
+    &::after {
+      top: -2px;
+      right: auto;
+      left: -88px;
+
+      width: 67px;
+      height: 67px;
+    }
+
+    &--business-tariffs {
+      font-size: 22px;
+    }
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .subscription-table {
+    width: 816px;
+    margin-bottom: 55px;
+  }
+
+  .subscription-table__row {
+    &--business-tariffs {
+      padding-left: 0;
+    }
+  }
+}

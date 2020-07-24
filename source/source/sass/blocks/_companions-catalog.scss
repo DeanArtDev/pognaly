@@ -1,0 +1,15 @@
+.companions-catalog {
+  position: relative;
+  z-index: 3;
+
+  margin-top: -60px;
+  padding-top: 84px;
+
+  background-color: #edeff6;
+}
+
+@include media(screen, min, $tablet-width) {
+  .companions-catalog {
+    padding-top: 106px;
+  }
+}

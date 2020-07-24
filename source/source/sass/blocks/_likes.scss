@@ -1,0 +1,113 @@
+.likes {
+  position: absolute;
+  top: 53px;
+  left: 67px;
+}
+
+// after иконка, before задний фон. Оба образуют одну иконку.
+
+.likes__label {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  color: $main-color;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 9px;
+
+    display: block;
+    width: 13px;
+    height: 11px;
+
+    background-image: url("../img/heart.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: translateY(-50%);
+    opacity: 0.3;
+  }
+
+  &:hover::after {
+    opacity: 0.5;
+  }
+
+  &:active::after {
+    opacity: 0.1;
+  }
+
+  &::before {
+    content: "";
+
+    display: block;
+    width: 31px;
+    height: 31px;
+    margin-right: 6px;
+
+    background-color: #edeff6;
+    border-radius: 50%;
+  }
+
+  &:hover::before,
+  &:active::before {
+    background-color: #e2e5f2;
+  }
+}
+
+// if checked and focus
+
+.likes__input {
+  &:focus + label::before {
+    box-shadow: 0 0 0 3px #ffffff,
+      0 0 0 4px $main-color;
+  }
+}
+
+.likes__input:checked + .likes__label {
+  &::after {
+    background-image: url("../img/heart-active.svg");
+    opacity: 1;
+  }
+
+  &:active::after {
+    opacity: 0.3;
+  }
+
+  &::before {
+    background-color: #f9eaea;
+  }
+
+  &:hover::before,
+  &:active::before {
+    background-color: #f9d8d8;
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .likes {
+    position: static;
+    top: auto;
+    left: auto;
+  }
+
+  .likes__label {
+    font-size: 20px;
+
+    &::after,
+    &::before {
+      width: 50px;
+      height: 50px;
+    }
+
+    &::after {
+      left: 0;
+
+      background-size: 20px 17px;
+    }
+  }
+}

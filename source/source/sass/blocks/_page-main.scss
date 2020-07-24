@@ -1,0 +1,21 @@
+.page-main {
+  background-color: #edeff6;
+}
+
+.page-main--form {
+  padding-bottom: 84px;
+
+  background-color: #d4d9eb;
+}
+
+@include media(screen, min, $tablet-width) {
+  .page-main--form {
+    padding-bottom: 73px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .page-main--form {
+    padding-bottom: 76px;
+  }
+}

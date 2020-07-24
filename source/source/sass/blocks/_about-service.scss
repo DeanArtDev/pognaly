@@ -1,0 +1,178 @@
+.about-service {
+  position: relative;
+  z-index: 9;
+
+  margin-top: -40px;
+
+  color: white;
+
+  background-color: #192144;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.about-service__wrapper {
+  position: relative;
+
+  &--bg-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../img/about-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: right 10px bottom;
+    background-size: 292px auto;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/about-mobile@2x.png");
+    }
+  }
+
+  &--column {
+    z-index: 1;
+
+    width: 223px;
+  }
+}
+
+.about-service__title {
+  margin-top: 0;
+  margin-bottom: 21px;
+
+  font-weight: 700;
+  font-size: 24px;
+  color: #ff8d30;
+}
+
+.about-service__content {
+  margin: 0;
+  margin-bottom: 19px;
+
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.38;
+
+  &--bold {
+    font-weight: 700;
+  }
+}
+
+.about-service__content br:last-child {
+  display: none;
+}
+
+@include media(screen, min, $tablet-width) {
+  .about-service {
+    margin-top: -58px;
+    overflow-x: hidden;
+
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+
+  .about-service__wrapper {
+    &--bg-img {
+      position: relative;
+      top: 0;
+      right: -5px;
+
+      width: 380px;
+      height: auto;
+
+      background-image: url("../img/about-tablet@1x.png");
+      background-position: bottom right;
+      background-size: 376px auto;
+
+      @media (min-resolution: $retina-dpi),
+        (min-resolution: $retina-dppx) {
+        background-image: url("../img/about-tablet@2x.png");
+      }
+    }
+
+    &--column {
+      width: 300px;
+    }
+  }
+
+  .about-service__title {
+    margin-bottom: 39px;
+
+    font-size: 45px;
+  }
+
+  .about-service__content {
+    margin-bottom: 32px;
+
+    font-size: 28px;
+    line-height: 1.2;
+
+    &--bold {
+      margin-bottom: 53px;
+
+      font-size: 21px;
+    }
+  }
+
+  .about-service__content br:first-child {
+    display: none;
+  }
+
+  .about-service__content br:last-child {
+    display: inline;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .about-service {
+    margin-top: -60px;
+
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+
+  .about-service__wrapper {
+    width: 613px;
+
+    &--bg-img {
+      top: 0;
+      right: auto;
+
+      width: 630px;
+      min-height: 665px;
+
+      background-image: url("../img/about-desktop@1x.png");
+      background-position: bottom right -7px;
+      background-size: 630px auto;
+
+      @media (min-resolution: $retina-dpi),
+        (min-resolution: $retina-dppx) {
+        background-image: url("../img/about-desktop@2x.png");
+      }
+    }
+  }
+
+  .about-service__title {
+    margin-bottom: 59px;
+    padding-top: 43px;
+  }
+
+  .about-service__content {
+    margin-bottom: 39px;
+    padding-left: 2px;
+
+    &--bold {
+      width: 425px;
+      margin-bottom: 86px;
+    }
+  }
+
+  .about-service__content br:last-child {
+    display: none;
+  }
+}

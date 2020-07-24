@@ -1,0 +1,172 @@
+.advantages-list {
+  width: auto;
+  margin: 0;
+  margin-top: 15px;
+  padding: 0;
+
+  list-style: none;
+  font-size: 18px;
+
+  counter-reset: num-slide;
+}
+
+.advantages-list__item {
+  margin-top: -15px;
+
+  &:not(:last-of-type) a {
+    padding-bottom: 35px;
+  }
+}
+
+.advantages-list__link {
+  position: relative;
+
+  display: block;
+  padding: 25px;
+  padding-top: 23px;
+  padding-right: 105px;
+
+  font-weight: bold;
+  color: $main-color;
+  text-decoration: none;
+
+  border-radius: 10px;
+
+  &::after {
+    content: counter(num-slide);
+    position: absolute;
+    top: 23px;
+    right: 22px;
+
+    display: block;
+
+    font-weight: 500;
+    color: #ffffff;
+
+    counter-increment: num-slide;
+
+    font-family: "BloggerSans", "Tahoma", sans-serif;
+  }
+}
+
+.advantages-list__item:nth-of-type(4n+1) a {
+  background-color: $second-color--darkest;
+}
+
+.advantages-list__item:nth-of-type(4n+2) a {
+  background-color: $second-color--dark;
+}
+
+.advantages-list__item:nth-of-type(4n+3) a {
+  background-color: $second-color--medium;
+}
+
+.advantages-list__item:nth-of-type(4n+4) a {
+  background-color: $second-color;
+}
+
+@include media(screen, min, $tablet-width) {
+  .advantages-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-left: 16px;
+  }
+
+  .advantages-list__link {
+    height: 100%;
+    padding-top: 31px;
+    padding-left: 30px;
+
+    font-size: 24px;
+
+    border-radius: 0;
+
+    &::after {
+      position: relative;
+      top: 10px;
+      right: auto;
+
+      font-size: 30px;
+    }
+  }
+
+  .advantages-list__item {
+    flex-grow: 1;
+    width: 50%;
+    margin-top: 0;
+    margin-left: -16px;
+
+    &:not(:last-of-type) a {
+      padding-bottom: 31px;
+    }
+
+    &:first-of-type a {
+      border-top-left-radius: 20px;
+    }
+
+    &:nth-of-type(even) {
+      width: 47%;
+    }
+
+    &:nth-of-type(2) a {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    &:nth-last-of-type(2) a {
+      border-bottom-left-radius: 20px;
+    }
+
+    &:last-of-type a {
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .advantages-list {
+    width: 100%;
+    margin-left: 30px;
+  }
+
+  .advantages-list__link {
+    padding-top: 29px;
+    padding-left: 34px;
+
+    &::after {
+      position: absolute;
+      top: 31px;
+      right: 62px;
+
+      font-size: 24px;
+    }
+  }
+
+  .advantages-list__item {
+    flex-grow: 1;
+    width: 25%;
+    margin-left: -30px;
+
+    &:nth-of-type(1n) a {
+      border-radius: 20px;
+    }
+
+    &:nth-of-type(even) {
+      width: 25%;
+    }
+
+    &:last-of-type {
+      max-width: 315px;
+    }
+
+    &:last-of-type a::after {
+      right: 34px;
+    }
+
+    &:first-of-type {
+      max-width: 343px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "_mixins";
+
+// relatively to the folder css
+@include font-face("BloggerSans", "../fonts/bloggersans-light", 300, normal, swap);
+@include font-face("BloggerSans", "../fonts/bloggersans-lightitalic", 300, italic);
+@include font-face("BloggerSans", "../fonts/bloggersans", 400, normal, swap);
+@include font-face("BloggerSans", "../fonts/bloggersans-italic", 400, italic);
+@include font-face("BloggerSans", "../fonts/bloggersans-medium", 500, normal, swap);
+@include font-face("BloggerSans", "../fonts/bloggersans-mediumitalic", 500, italic);
+@include font-face("BloggerSans", "../fonts/bloggersans-bold", 700, normal, swap);
+@include font-face("BloggerSans", "../fonts/bloggersans-bolditalic", 700, italic);

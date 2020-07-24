@@ -1,0 +1,1586 @@
+.plan-form {
+  width: 100%;
+}
+
+.plan-form__step-one,
+.plan-form__step-two,
+.plan-form__step-three {
+  margin-bottom: 10px;
+  padding-top: 21px;
+  padding-right: 25px;
+  padding-bottom: 23px;
+  padding-left: 25px;
+
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.plan-form__step-two {
+  padding-bottom: 8px;
+}
+
+.plan-form__step-three {
+  padding-bottom: 4px;
+}
+
+.plan-form__title,
+.plan-form__subtitle {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: 20px;
+  color: $main-text-color--dark;
+}
+
+.plan-form__subtitle {
+  margin-bottom: 16px;
+}
+
+.plan-form__description {
+  margin-top: 0;
+  margin-bottom: 21px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  color: $main-text-color;
+}
+
+.plan-form__br-desktop {
+  display: none;
+}
+
+.plan-form__br-tablet {
+  display: none;
+}
+
+.plan-form__companions,
+.plan-form__duration {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.plan-form__duration {
+  padding-bottom: 48px;
+}
+
+.plan-form__label {
+  color: $main-text-color--dark;
+}
+
+.plan-form__type {
+  color: rgba(#1d2e5b, 0.3);
+}
+
+.plan-form__input-paper {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 20px;
+  padding-top: 9px;
+}
+
+.plan-form__input-paper--fade {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 58px;
+    bottom: 1px;
+
+    display: block;
+    width: 43px;
+
+    background-image: linear-gradient(270deg, #ffffff 0, #ffffff 55%, transparent 100%);
+    background-repeat: no-repeat;
+    background-position: center right;
+  }
+}
+
+.plan-form__input-paper--step-two {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  padding-top: 0;
+}
+
+.plan-form__input {
+  width: 100%;
+  padding: 12px;
+  padding-bottom: 11px;
+
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 0.9;
+  text-align: center;
+  letter-spacing: 1.5px;
+
+  background-color: #ffffff;
+  border: solid 1px #cbced9;
+  border-radius: 4px;
+
+  @include font-family("BloggerSans", "Tahoma");
+
+  &::placeholder {
+    color: $main-text-color--dark;
+  }
+
+  &:hover {
+    border-color: #959bb2;
+  }
+
+  &:focus {
+    border-color: $main-color;
+    outline: none;
+  }
+}
+
+.plan-form__input-paper--step-two:last-of-type {
+  margin-bottom: 25px;
+}
+
+.plan-form__input-button {
+  position: absolute;
+  bottom: 0;
+
+  width: 14px;
+  height: calc(100% - 9px);
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px 14px;
+  border: none;
+  opacity: 0.2;
+
+  &:hover {
+    opacity: 0.4;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
+}
+
+.plan-form__input-button--prev {
+  left: 14px;
+
+  background-image: url("../img/qty-minus.svg");
+  background-size: 14px 2px;
+}
+
+.plan-form__input-button--next {
+  right: 14px;
+
+  background-image: url("../img/qty-plus.svg");
+}
+
+.plan-form__label--checkbox {
+  position: absolute;
+  bottom: -115px;
+  left: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 15px;
+  color: $main-text-color;
+  text-transform: none;
+  letter-spacing: normal;
+
+  &:hover::before {
+    border-color: #959bb2;
+  }
+
+  &:active::before {
+    background-color: #e2e5f1;
+    border: none;
+  }
+
+  &:active::after {
+    opacity: 0.3;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 26px;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 9px 9px;
+  }
+
+  &::before {
+    content: "";
+
+    width: 26px;
+    height: 26px;
+    margin-right: 13px;
+
+    border: 1px solid #cbced9;
+    border-radius: 4px;
+  }
+}
+
+// Фокус эффект
+
+.plan-form__input-checkbox {
+  &:focus + label::before {
+    position: relative;
+    z-index: 2;
+
+    border-radius: 4px;
+    box-shadow: 0 0 0 5px #ffffff,
+      0 0 0 6px $main-color;
+  }
+}
+
+.plan-form__input-checkbox:checked + .plan-form__label--checkbox::after {
+  background-image: url("../img/tick.svg");
+}
+
+// Дата и год
+
+.plan-form__month-year {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+
+  border-top: 1px solid #d6d9e6;
+  border-bottom: 1px solid #d6d9e6;
+}
+
+.plan-form__month-year h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-weight: 700;
+  font-size: 20px;
+  color: $main-text-color--dark;
+}
+
+.plan-form__month-year-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 9px 18px;
+  border: none;
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
+}
+
+.plan-form__month-year-button--prev {
+  background-image: url("../img/month-arrow-left.svg");
+  background-position: left center;
+}
+
+.plan-form__month-year-button--next {
+  background-image: url("../img/month-arrow-right.svg");
+  background-position: right center;
+}
+
+// таблица
+
+.plan-form__calendar {
+  width: 100%;
+  margin-bottom: 22px;
+
+  border-collapse: collapse;
+}
+
+.plan-form__calendar-week-day {
+  padding-bottom: 8px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: center;
+  color: $main-text-color;
+  text-transform: uppercase;
+}
+
+.plan-form__calendar-week-day:nth-last-of-type(-n+2) {
+  color: #ff5c23;
+}
+
+.plan-form__calendar-start-month {
+  display: none;
+}
+
+.plan-form__calendar td {
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: center;
+  color: rgba($main-text-color, 0.3);
+
+  border: 1px solid #cbced9;
+
+  &:hover {
+    position: relative;
+    z-index: 2;
+
+    color: #ffffff;
+
+    background-color: $main-text-color--dark;
+    outline: 2px solid #ff5c23;
+    outline-offset: -1px;
+  }
+}
+
+.plan-form__calendar-tablet {
+  display: none;
+
+  text-transform: none;
+}
+
+.plan-form__calendar .plan-form__calendar-day {
+  color: rgba($main-text-color, 1);
+
+  background-color: #edeff6;
+}
+
+.plan-form__calendar .plan-form__calendar-current {
+  color: #ffffff;
+
+  background-color: $main-text-color--dark;
+}
+
+.plan-form__calendar .plan-form__calendar-closen {
+  color: #ffffff;
+
+  background-color: $background-color-description;
+}
+
+// ^step-two
+
+// Input
+
+.plan-form__input-country {
+  width: 100%;
+  padding: 11px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  color: $main-text-color--dark;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+
+  background-color: #ffffff;
+  border: solid 1px #cbced9;
+  border-radius: 4px;
+
+  @include font-family("BloggerSans", "Tahoma");
+}
+
+.plan-form__input-country--selected-country {
+  position: relative;
+
+  width: 169px;
+}
+
+.plan-form__input-country--new-country {
+  padding: 11px;
+}
+
+.plan-form__input-country--hover {
+  &:hover {
+    border-color: #959bb2;
+  }
+
+  &:hover + .plan-form__label-country--new-country::after,
+  &:hover + .plan-form__label-country--selected-country::after {
+    opacity: 0.5;
+  }
+}
+
+// Открытый поиск стран по алфавиту
+
+.plan-form__input-country--open {
+  color: #ffffff;
+
+  background-color: $main-text-color--dark;
+  border: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+// Кнопка при открытом списке стран и ее ховер/активы
+
+.plan-form__input-country--open ~ .plan-form__country-button {
+  top: 11px;
+  right: 11px;
+
+  background-color: transparent;
+
+  svg {
+    fill: rgba(#ffffff, 0.3);
+  }
+
+  &:hover svg {
+    opacity: 1;
+
+    fill: #ffffff;
+  }
+
+  &:active svg {
+    opacity: 1;
+
+    fill: rgba(#ffffff, 0.1);
+  }
+}
+
+.plan-form__input-country--open + .plan-form__label-country--new-country {
+  &::before,
+  &::after {
+    display: none;
+  }
+}
+
+.plan-form__input-country--open ~ .dropdown-countries-list {
+  display: block;
+}
+
+// Label
+
+.plan-form__label-country {
+  position: relative;
+  top: 0;
+  right: 0;
+
+  width: 57px;
+  height: 100%;
+  padding-right: 14px;
+}
+
+.plan-form__label-country--selected-country {
+  width: 52px;
+  height: auto;
+  margin-left: -1px;
+
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 35px 24px;
+  border: solid 1px #cbced9;
+  border-radius: 4px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 66px;
+    z-index: 1;
+
+    display: block;
+    width: 14px;
+    height: 100%;
+
+    background-image: url("../img/dropdown-form.svg");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 12px 7px;
+    opacity: 0.3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -6px;
+
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+
+    background-color: $main-text-color--dark;
+    border: none;
+    border-radius: 50%;
+  }
+}
+
+.plan-form__label-country--bosnia {
+  background-image: url("../img/flag-bosnia.svg");
+}
+
+.plan-form__label-country--czechoslovakia {
+  background-image: url("../../img/flag-czech.svg");
+}
+
+// ^Button
+
+.plan-form__label-country + .plan-form__country-button {
+  display: none;
+}
+
+.plan-form__label-country--new-country + .plan-form__country-button,
+.plan-form__label-country--selected-country + .plan-form__country-button {
+  display: block;
+}
+
+.plan-form__add-country-button {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  padding: 12px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: left;
+  color: $main-text-color--dark;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+
+  background-color: #edeff6;
+  border: none;
+  border-radius: 4px;
+
+  @include font-family("BloggerSans", "Tahoma");
+
+  &:active {
+    color: rgba($main-text-color--dark, 0.3);
+  }
+
+  &:active::after {
+    opacity: 0.1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 15px;
+
+    display: block;
+    width: 14px;
+    height: 100%;
+
+    background-image: url("../img/qty-plus.svg");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 14px;
+    opacity: 0.3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 50px;
+
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+
+    border: 1px solid #cbced9;
+    border-radius: 50%;
+  }
+}
+
+.plan-form__label-country--new-country {
+  position: absolute;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 14px;
+
+    display: block;
+    width: 14px;
+    height: 100%;
+
+    background-image: url("../img/dropdown-form.svg");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 12px 7px;
+    opacity: 0.3;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    display: block;
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+
+    border: 1px solid #cbced9;
+    border-radius: 50%;
+  }
+}
+
+// ^Button
+
+.plan-form__country-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  width: 21px;
+  height: 21px;
+  padding: 0;
+
+  background-color: #edeff6;
+  border: none;
+  border-radius: 50%;
+
+  &:hover svg {
+    opacity: 0.3;
+  }
+
+  &:active svg {
+    opacity: 0.1;
+  }
+}
+
+.plan-form__country-button svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  fill: rgba(#000000, 0.2);
+}
+
+// ^step-three
+// textarea
+
+.plan-form__textarea-paper {
+  position: relative;
+
+  margin-bottom: 21px;
+  padding-top: 2px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -14px;
+
+    display: block;
+    width: 15px;
+    height: 2px;
+
+    background-color: $main-text-color--dark;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    bottom: -35px;
+    left: -14px;
+
+    display: block;
+    width: 2px;
+
+    background-color: $main-text-color--dark;
+  }
+}
+
+// Левая обводка что бы работала при переполнении
+
+.plan-form__textarea-paper + .plan-form__textarea-paper:last-of-type {
+  &::after {
+    display: none;
+  }
+}
+
+.plan-form__textarea {
+  width: 100%;
+  min-height: 220px;
+  padding: 13px;
+  padding-top: 8px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  text-align: left;
+  color: $main-text-color;
+
+  background-color: #ffffff;
+  border: solid 1px #cbced9;
+  border-radius: 4px;
+  outline: none;
+
+  resize: none;
+
+  @include font-family("BloggerSans", "Tahoma");
+
+  &:focus {
+    border-color: $main-color;
+  }
+
+  &:not(:valid) {
+    border-color: #f47e7e;
+  }
+
+  &:not(:valid) + small {
+    display: flex;
+  }
+
+  &::placeholder {
+    color: rgba(68, 68, 68, 0.3);
+  }
+}
+
+// Не заполнено поле
+
+.plan-form__textarea-paper small {
+  position: absolute;
+  right: 1px;
+  bottom: 4px;
+  left: 1px;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 57px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #ff0000;
+
+  background-color: #ffefef;
+  border-radius: 4px;
+}
+
+.plan-form__textarea-paper:last-of-type {
+  margin-bottom: 17px;
+}
+
+.plan-form__textarea-label {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 24px;
+  margin-bottom: 12px;
+  padding-left: 11px;
+
+  font-weight: 500;
+  font-size: 18px;
+  color: $main-text-color--dark;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+    width: 95px;
+    height: 100%;
+    margin-top: -2px;
+
+    background-repeat: no-repeat, no-repeat;
+    background-position: center right, center right;
+    background-size: 35px 24px, auto auto;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -3px;
+
+    display: block;
+    width: 6px;
+    height: 6px;
+
+    background-color: $main-text-color--dark;
+    border: 0;
+    border-radius: 50%;
+  }
+}
+
+.plan-form__textarea-label--bosnia {
+  &::after {
+    background-image: url("../img/flag-bosnia.svg"),
+      linear-gradient(270deg, #ffffff 0, #ffffff 68%, transparent 100%);
+  }
+}
+
+.plan-form__textarea-label--czechoslovakia {
+  &::after {
+    background-image: url("../img/flag-czech.svg"),
+      linear-gradient(270deg, #ffffff 0, #ffffff 68%, transparent 100%);
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .plan-form__step-one,
+  .plan-form__step-two,
+  .plan-form__step-three {
+    margin-bottom: 40px;
+    padding-top: 47px;
+    padding-right: 43px;
+    padding-bottom: 56px;
+    padding-left: 43px;
+
+    border-radius: 30px;
+  }
+
+  .plan-form__step-two {
+    margin-bottom: 51px;
+    padding-top: 45px;
+    padding-bottom: 53px;
+  }
+
+  .plan-form__step-three {
+    padding-right: 46px;
+    padding-bottom: 53px;
+    padding-left: 45px;
+  }
+
+  .plan-form__title,
+  .plan-form__subtitle {
+    font-size: 36px;
+  }
+
+  .plan-form__subtitle {
+    margin-bottom: 34px;
+  }
+
+  .plan-form__description {
+    width: 500px;
+    margin-bottom: 38px;
+
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .plan-form__br-tablet {
+    display: inline;
+  }
+
+  .plan-form__companions,
+  .plan-form__duration {
+    padding-top: 23px;
+
+    font-size: 20px;
+    line-height: 0.9;
+    letter-spacing: 2px;
+
+    border-top: 1px solid #d6d9e6;
+  }
+
+  .plan-form__duration {
+    padding-bottom: 34px;
+  }
+
+  .plan-form__input-paper {
+    margin-bottom: 25px;
+    padding-top: 26px;
+  }
+
+  .plan-form__input {
+    padding-top: 21px;
+    padding-bottom: 23px;
+
+    font-size: 20px;
+
+    &::placeholder {
+      font-size: 20px;
+      line-height: 0.9;
+      letter-spacing: 2px;
+    }
+  }
+
+  .plan-form__input-button {
+    width: 20px;
+    height: calc(100% - 26px);
+
+    background-size: 20px;
+  }
+
+  .plan-form__input-button--prev {
+    left: 24px;
+  }
+
+  .plan-form__input-button--next {
+    right: 20px;
+  }
+
+  .plan-form__label--checkbox {
+    position: relative;
+    bottom: auto;
+    left: auto;
+
+    margin-bottom: 26px;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 0.9;
+    color: $main-text-color--dark;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &::after {
+      width: 36px;
+
+      background-size: 12px;
+    }
+
+    &::before {
+      width: 36px;
+      height: 36px;
+      margin-right: 23px;
+    }
+  }
+
+  .plan-form__month-year {
+    margin-bottom: 33px;
+    padding-top: 25px;
+    padding-bottom: 24px;
+  }
+
+  .plan-form__month-year h3 {
+    font-size: 36px;
+  }
+
+  .plan-form__month-year-button {
+    width: 18px;
+    padding: 0;
+
+    background-size: 18px;
+  }
+
+  .plan-form__month-year-button--prev {
+    margin-left: 16px;
+  }
+
+  .plan-form__month-year-button--next {
+    margin-right: 16px;
+  }
+
+  // Таблица
+
+  .plan-form__calendar-week-day {
+    font-size: 18px;
+  }
+
+  .plan-form__calendar-tablet {
+    display: inline;
+  }
+
+  .plan-form__calendar {
+    margin-bottom: 46px;
+  }
+
+  .plan-form__calendar td {
+    padding-top: 20px;
+    padding-bottom: 23px;
+
+    font-size: 20px;
+  }
+
+  // ^Step-two
+  // ^Inputs
+
+  .plan-form__input-country {
+    width: auto;
+    min-width: 369px;
+    height: 70px;
+    padding-left: 24px;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 0.9;
+    letter-spacing: 2px;
+  }
+
+  .plan-form__input-country--open ~ .dropdown-countries-list {
+    display: flex;
+  }
+
+  .plan-form__input-country--open + .plan-form__label-country--new-country {
+    margin-left: auto;
+
+    &::before {
+      left: -74px;
+
+      display: flex;
+    }
+  }
+
+  .plan-form__input-paper--step-two {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-top: 0;
+  }
+
+  .plan-form__input-paper--step-two:last-of-type {
+    margin-bottom: 48px;
+  }
+
+  .plan-form__input-paper--vertical-border {
+    position: relative;
+
+    justify-content: flex-start;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      right: 136px;
+      bottom: 0;
+
+      display: block;
+      width: 1px;
+
+      background-color: #d6d9e6;
+    }
+
+    &::after {
+      top: 0;
+      bottom: -52px;
+
+      background-color: transparent;
+      background-image: linear-gradient(0deg, transparent 0, #d6d9e6 30%, #d6d9e6 100%);
+    }
+
+    &::before {
+      top: -296px;
+    }
+  }
+
+  .plan-form__title-wrapper--border {
+    position: relative;
+
+    margin-bottom: 38px;
+    padding-bottom: 2px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 3px;
+      left: 0;
+
+      height: 1px;
+
+      background-color: #d6d9e6;
+    }
+  }
+
+  .plan-form__input-paper--fade::after {
+    display: none;
+  }
+
+  // ^Label
+
+  .plan-form__label-country--selected-country {
+    width: 70px;
+    margin-top: 1px;
+    margin-left: 33px;
+
+    background-size: 71px 48px;
+    border: none;
+
+    &::after {
+      right: 150px;
+
+      width: 17px;
+
+      background-size: 17px 9px;
+    }
+
+    &::before {
+      left: -34px;
+      z-index: 1;
+
+      width: 15px;
+      height: 15px;
+      margin-top: -9px;
+    }
+  }
+
+  .plan-form__label-country--new-country {
+    position: relative;
+
+    width: 70px;
+    height: auto;
+
+    &::after {
+      right: 133px;
+
+      width: 17px;
+
+      background-size: 17px 9px;
+    }
+
+    &::before {
+      left: -17px;
+      z-index: 1;
+
+      width: 15px;
+      height: 15px;
+      margin-top: -9px;
+
+      background-color: #ffffff;
+    }
+  }
+
+  // ^Button
+
+  .plan-form__country-button {
+    position: relative;
+    top: auto;
+    right: auto;
+
+    align-self: center;
+
+    background-color: transparent;
+
+    &::before {
+      background-size: 17px;
+    }
+  }
+
+  .plan-form__country-button svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .plan-form__input-country--open ~ .plan-form__country-button {
+    position: absolute;
+    top: 50%;
+    right: auto;
+    left: 323px;
+
+    margin-top: -9px;
+  }
+
+  .plan-form__add-country-button {
+    width: auto;
+    min-width: 369px;
+    height: 70px;
+    padding-left: 26px;
+    overflow: visible;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 0.9;
+    letter-spacing: 2px;
+
+    &::after {
+      right: 26px;
+
+      width: 20px;
+
+      background-size: 20px;
+    }
+
+    &::before {
+      right: -34px;
+      z-index: 2;
+
+      width: 15px;
+      height: 15px;
+      margin-top: -10px;
+
+      background-color: #d4d9eb;
+    }
+  }
+
+  // ^step-three
+  // textarea
+  .plan-form__step-three .plan-form__description {
+    margin-bottom: 59px;
+  }
+
+  .plan-form__textarea-paper {
+    margin-bottom: 37px;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  .plan-form__textarea-label {
+    align-items: center;
+    min-height: 47px;
+    margin-bottom: 30px;
+    padding-left: 0;
+
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 0.6;
+    letter-spacing: -0.3px;
+
+    &::after {
+      margin-top: 4px;
+
+      background-size: 70px 47px, auto auto;
+    }
+
+    &::before {
+      content: "";
+      top: 18px;
+      right: 103px;
+      left: auto;
+
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .plan-form__textarea {
+    min-height: 142px;
+    padding-top: 14px;
+    padding-right: 16px;
+    padding-left: 16px;
+
+    font-size: 20px;
+  }
+
+  // Не заполнено поле
+
+  .plan-form__textarea-paper small {
+    font-size: 18px;
+  }
+
+  .plan-form__textarea-paper:last-of-type {
+    margin-bottom: 43px;
+  }
+
+  .plan-form__button-back {
+    margin-left: 36px;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .plan-form__step-one,
+  .plan-form__step-two,
+  .plan-form__step-three {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 45px;
+    padding-top: 95px;
+    padding-right: 160px;
+    padding-bottom: 105px;
+    padding-left: 160px;
+
+    border-radius: 60px;
+  }
+
+  // Управление через родительский класс
+
+  .plan-form__step-three {
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .plan-form__title-wrapper {
+      align-items: flex-start;
+    }
+
+    .add-plan__breadcrumbs--padding {
+      margin-bottom: 94px;
+    }
+  }
+
+  .plan-form__title-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+  }
+
+  .plan-form__title {
+    margin-right: 8px;
+  }
+
+  .plan-form__subtitle {
+    margin-right: 50px;
+  }
+
+  .plan-form__description {
+    width: auto;
+    margin-bottom: 58px;
+  }
+
+  .plan-form__br-desktop {
+    display: inline;
+  }
+
+  .plan-form__companions,
+  .plan-form__duration {
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .plan-form__duration {
+    margin-bottom: 22px;
+    padding-top: 4px;
+
+    border-top: none;
+  }
+
+  .plan-form__input-paper {
+    width: 181px;
+    margin-right: 36px;
+    margin-bottom: 0;
+    padding-top: 0;
+  }
+
+  .plan-form__label {
+    width: 22%;
+  }
+
+  .plan-form__label--checkbox {
+    order: 4;
+    width: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+  }
+
+  .plan-form__type {
+    order: 3;
+  }
+
+  .plan-form__input-button {
+    height: 100%;
+  }
+
+  .plan-form__month-year {
+    width: 100%;
+    margin-bottom: 13px;
+  }
+
+  .plan-form__month-year-button {
+    margin: 0;
+  }
+
+  // ^Таблица
+
+  .plan-form__calendar {
+    margin-bottom: 57px;
+  }
+
+  .plan-form__calendar-week-day {
+    width: 143px;
+    padding-bottom: 18px;
+    padding-left: 16px;
+
+    text-align: left;
+  }
+
+  .plan-form__calendar td {
+    width: 144px;
+    height: 71px;
+    padding-top: 9px;
+    padding-bottom: 0;
+    padding-left: 15px;
+
+    vertical-align: top;
+    text-align: left;
+
+    cursor: pointer;
+
+    &:hover {
+      outline-width: 3px;
+    }
+  }
+
+  .plan-form__calendar-start-month {
+    display: inline;
+  }
+
+  .plan-form__calendar-start,
+  .plan-form__calendar-end {
+    &::after {
+      display: block;
+      margin-top: 4px;
+
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1;
+      color: #ffffff;
+      letter-spacing: 1.8px;
+
+      @include font-family("BloggerSans", "Tahoma");
+    }
+  }
+
+  .plan-form__calendar-start {
+    &::after {
+      content: "Заезд";
+    }
+  }
+
+  .plan-form__calendar-end {
+    &::after {
+      content: "Выезд";
+    }
+  }
+
+  // ^step-two
+
+  // ^Input
+
+  .plan-form__input-paper--step-two {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .plan-form__input-paper--step-two:last-of-type {
+    margin-bottom: 55px;
+  }
+
+  .plan-form__input-paper--vertical-border {
+    &::after,
+    &::before {
+      right: 225px;
+    }
+
+    &::after {
+      bottom: -134px;
+    }
+
+    &::before {
+      top: -317px;
+    }
+  }
+
+  .plan-form__title-wrapper--border {
+    margin-bottom: 62px;
+    padding-bottom: 0;
+
+    &::before {
+      right: -397px;
+      bottom: 0;
+    }
+  }
+
+  .plan-form__input-country {
+    min-width: 730px;
+  }
+
+  // ^Label
+
+  .plan-form__label-country {
+    right: 35px;
+  }
+
+  .plan-form__label-country--selected-country {
+    margin-left: 61px;
+
+    &::after {
+      right: 182px;
+    }
+
+    &::before {
+      left: -48px;
+    }
+  }
+
+  .plan-form__label-country--new-country {
+    &::after {
+      right: 152px;
+    }
+  }
+
+  .plan-form__input-country--open + .plan-form__label-country--new-country {
+    &::before {
+      left: -128px;
+    }
+  }
+
+  // ^Button
+
+  .plan-form__add-country-button {
+    width: 730px;
+
+    &::before {
+      right: -52px;
+    }
+  }
+
+  .plan-form__input-country--open ~ .plan-form__country-button {
+    left: 684px;
+  }
+
+  // ^step-three
+
+  .plan-form__textarea-paper {
+    width: 88.5%;
+
+    &::after {
+      top: 32px;
+      right: 109px;
+      bottom: -65px;
+      left: auto;
+
+      display: block;
+    }
+  }
+
+  .plan-form__textarea-paper:last-of-type {
+    margin-bottom: 51px;
+  }
+
+  .plan-form__textarea {
+    width: 730px;
+    padding-top: 20px;
+    padding-left: 25px;
+  }
+
+  .plan-form__textarea-paper small {
+    justify-content: flex-start;
+    width: 728px;
+    padding-left: 20px;
+
+    font-size: 20px;
+  }
+
+  .plan-form__button-back {
+    margin-top: 23px;
+  }
+}

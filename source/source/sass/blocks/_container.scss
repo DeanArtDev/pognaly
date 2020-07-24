@@ -1,0 +1,505 @@
+.container {
+  position: relative;
+
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  &--page-header {
+    padding-top: 27px;
+
+    text-align: center;
+  }
+
+  &--advantages {
+    min-height: 478px;
+    padding-top: 47px;
+    padding-bottom: 38px;
+
+    background-image: url("../img/traveller-illustration-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: top 178px right 49px;
+    background-size: 192px 255px;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/traveller-illustration-mobile@2x.png");
+    }
+  }
+
+  &--about-service {
+    padding: {
+      top: 72px;
+      right: 50px;
+      bottom: 63px;
+      left: 50px;
+    }
+  }
+
+  &--direction {
+    padding-top: 120px;
+    padding-bottom: 108px;
+  }
+
+  &--companions {
+    padding-top: 120px;
+    padding-bottom: 102px;
+
+    background-image: url("../img/smolov-back-desktop@1x.png"),
+      url("../img/rogovaya-back-mobile@1x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 89px right 25px, top 361px left -10px;
+    background-size: 143px 143px, 71px 71px;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("../img/smolov-back-desktop@2x.png"),
+        url("../img/rogovaya-back-mobile@2x.png");
+    }
+  }
+
+  &--paid-subscription {
+    padding-top: 86px;
+    padding-right: 26px;
+    padding-bottom: 39px;
+    padding-left: 50px;
+  }
+
+  &--advantages-subscribe-list {
+    padding-top: 120px;
+    padding-bottom: 30px;
+  }
+
+  &--our-location {
+    padding: 0;
+    padding-top: 44px;
+  }
+
+  &--page-footer {
+    padding-top: 38px;
+    padding-bottom: 10px;
+  }
+
+  &--modal-busines-tariffs {
+    top: 50%;
+
+    max-width: 270px;
+    padding: 33px 25px 0;
+
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px 0 rgba(29, 46, 91, 0.1);
+    transform: translateY(-50%);
+  }
+
+  &--companions-result {
+    padding-bottom: 46px;
+  }
+
+  // ^catalog.html
+
+  &--page-header-catalog {
+    padding-top: 19px;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  &--country-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 76px;
+    padding-right: 29px;
+    padding-bottom: 14px;
+  }
+
+  // ^form.html
+
+  &--profile-description {
+    padding-top: 73px;
+    padding-bottom: 83px;
+  }
+
+  &--user-plans {
+    padding-top: 8px;
+    padding-bottom: 50px;
+  }
+
+  &--add-plan {
+    padding-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.container__figure-bg {
+  &::before {
+    content: "";
+    position: absolute;
+
+    display: block;
+
+    border-radius: 20px;
+  }
+
+  &--direction {
+    &::before {
+      z-index: -1;
+
+      display: none;
+      width: 141px;
+      height: 141px;
+
+      background-color: #e2e5f2;
+    }
+  }
+
+  &--about-service {
+    &::before {
+      top: 41px;
+      left: -20px;
+
+      width: 133px;
+      height: 132px;
+
+      background-color: #141b3b;
+    }
+  }
+
+  &--companions {
+    &::before {
+      top: 89px;
+      left: -20px;
+      z-index: -1;
+
+      width: 133px;
+      height: 132px;
+
+      background-color: #141b3b;
+    }
+  }
+}
+
+@include media(screen, min, $tablet-width) {
+  .container {
+    width: 768px;
+    padding-right: 40px;
+    padding-left: 40px;
+
+    &--about-service {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 100px;
+      padding-right: 0;
+      padding-bottom: 88px;
+      padding-left: 75px;
+    }
+
+    &--page-header {
+      padding-top: 40px;
+    }
+
+    &--advantages {
+      padding-top: 70px;
+      padding-bottom: 96px;
+
+      background-image: url("../img/traveller-illustration-tablet@1x.png");
+      background-position: top 315px right 111px;
+      background-size: 372px auto;
+
+      @media (min-resolution: $retina-dpi),
+        (min-resolution: $retina-dppx) {
+        background-image: url("../img/traveller-illustration-tablet@2x.png");
+      }
+    }
+
+    &--direction {
+      padding-top: 120px;
+      padding-right: 75px;
+      padding-bottom: 156px;
+      padding-left: 75px;
+
+      background-image: url("../img/flags-back@1x.png");
+      background-repeat: no-repeat;
+      background-position: top 129px right 40px;
+      background-size: 289px 575px;
+
+      @media (min-resolution: $retina-dpi),
+        (min-resolution: $retina-dppx) {
+        background-image: url("../img/flags-back@2x.png");
+      }
+    }
+
+    &--companions {
+      padding-top: 187px;
+      padding-right: 75px;
+      padding-bottom: 239px;
+      padding-left: 75px;
+
+      background-image: url("../img/rogovaya-back-desktop@1x.png"),
+        url("../img/smolov-back-desktop@1x.png");
+      background-position: top 130px right 77px,
+        top 476px left 40px;
+      background-size: 285px 285px, 143px 143px;
+
+      @media (min-resolution: $retina-dpi),
+        (min-resolution: $retina-dppx) {
+        background-image: url("../img/rogovaya-back-desktop@2x.png"),
+          url("../img/smolov-back-desktop@2x.png");
+      }
+
+      &::before {
+        top: 129px;
+        left: 40px;
+
+        width: 213px;
+        height: 213px;
+      }
+    }
+
+    &--paid-subscription {
+      padding-top: 120px;
+      padding-right: 71px;
+      padding-bottom: 89px;
+      padding-left: 130px;
+    }
+
+    &--advantages-subscribe-list {
+      padding-top: 122px;
+      padding-right: 75px;
+      padding-bottom: 59px;
+      padding-left: 75px;
+    }
+
+    &--our-location {
+      padding-top: 61px;
+      padding-right: 75px;
+      padding-bottom: 50px;
+      padding-left: 75px;
+    }
+
+    &--page-footer {
+      padding-top: 47px;
+      padding-bottom: 47px;
+    }
+
+    // ^catalog.html
+
+    &--page-header-catalog {
+      padding-top: 40px;
+    }
+
+    &--country-filter {
+      padding-top: 117px;
+      padding-right: 75px;
+      padding-left: 73px;
+      padding-bottom: 50px;
+    }
+
+    // ^form.html
+
+    &--profile-description {
+      padding-top: 114px;
+      padding-right: 75px;
+      padding-left: 75px;
+    }
+
+    &--user-plans {
+      padding-right: 75px;
+      padding-left: 75px;
+      padding-bottom: 105px;
+    }
+
+    &--add-plan {
+      padding-left: 75px;
+      padding-right: 75px;
+      padding-top: 23px;
+    }
+  }
+
+  .container__figure-bg {
+    &--direction {
+      &::before {
+        top: 456px;
+        left: 40px;
+
+        display: block;
+      }
+    }
+
+    &--about-service {
+      &::before {
+        top: 60px;
+        left: 40px;
+
+        width: 688px;
+        height: 213px;
+      }
+    }
+
+    &--paid-subscription {
+      &::before {
+        right: 40px;
+        bottom: 122px;
+
+        width: 198px;
+        height: 285px;
+
+        background-color: #e2e5f2;
+      }
+    }
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .container {
+    width: 1440px;
+    padding-top: 50px;
+    padding-right: 60px;
+    padding-left: 60px;
+
+    &--about-service {
+      padding-top: 148px;
+      padding-right: 60px;
+      padding-bottom: 0;
+      padding-left: 130px;
+    }
+
+    &--advantages {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 107px;
+      padding-bottom: 121px;
+
+      background-image: url("../img/traveller-illustration-desktop@1x.png");
+      background-position: bottom right 404px;
+      background-size: 431px 640px;
+
+      @media (min-resolution: $retina-dpi),
+        (min-resolution: $retina-dppx) {
+        background-image: url("../img/traveller-illustration-desktop@2x.png");
+      }
+    }
+
+    &--direction {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 211px;
+      padding-right: 130px;
+      padding-bottom: 139px;
+      padding-left: 130px;
+
+      background-position: top 138px right 60px;
+    }
+
+    &--companions {
+      display: flex;
+      flex-wrap: wrap;
+      padding-top: 174px;
+      padding-right: 60px;
+      padding-bottom: 75px;
+      padding-left: 130px;
+
+      background-position: top 436px left 191px,
+        top 184px left 547px;
+
+      &::before {
+        top: 119px;
+        left: 60px;
+      }
+    }
+
+    &--paid-subscription {
+      padding-top: 152px;
+      padding-right: 133px;
+      padding-bottom: 190px;
+      padding-left: 222px;
+    }
+
+    &--companions-result {
+      width: auto;
+    }
+
+    &--advantages-subscribe-list {
+      padding-top: 153px;
+      padding-right: 135px;
+      padding-bottom: 102px;
+      padding-left: 135px;
+    }
+
+    &--our-location {
+      padding-right: 135px;
+      padding-left: 135px;
+      padding-top: 66px;
+      padding-bottom: 22px;
+    }
+
+    // ^catalog.html
+
+    &--country-filter {
+      padding-top: 117px;
+      padding-right: 123px;
+      padding-left: 80px;
+      padding-bottom: 50px;
+    }
+
+    &--companions-catalog {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding-top: 30px;
+    }
+
+    // ^form.html
+
+    &--profile-description {
+      padding-top: 123px;
+      padding-right: 60px;
+      padding-left: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &--user-plans {
+      padding-right: 60px;
+      padding-left: 124px;
+      padding-top: 46px;
+    }
+
+    &--add-plan {
+      padding-top: 23px;
+    }
+  }
+
+  .container__figure-bg {
+    &--direction {
+      &::before {
+        top: 139px;
+        left: 60px;
+      }
+    }
+
+    &--about-service {
+      &::before {
+        top: 131px;
+        left: 60px;
+
+        width: 213px;
+      }
+    }
+
+    &--paid-subscription {
+      &::before {
+        right: 246px;
+        bottom: 216px;
+
+        width: 444px;
+        height: 300px;
+      }
+    }
+  }
+}

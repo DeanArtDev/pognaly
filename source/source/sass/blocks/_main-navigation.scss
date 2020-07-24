@@ -1,0 +1,44 @@
+.main-navigation {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 49px;
+}
+
+.main-navigation--nojs {
+  justify-content: flex-start;
+}
+
+// main-navigation--catalog
+
+.main-navigation--catalog {
+  padding-bottom: 0;
+}
+
+// Скрытие на мобильной версии панели авторизации
+
+.main-navigation--catalog .user-list--page-header {
+  display: none;
+}
+
+.main-navigation--nojs .burger-menu-button {
+  display: none;
+}
+
+@include media(screen, min, $tablet-width) {
+  .main-navigation--catalog .user-list--page-header {
+    display: flex;
+  }
+
+  .main-navigation--catalog .user-list--page-header-catalog {
+    display: none;
+  }
+}
+
+@include media(screen, min, $desktop-width) {
+  .main-navigation {
+    align-items: center;
+  }
+}

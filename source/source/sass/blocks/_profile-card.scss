@@ -1,0 +1,13 @@
+.profile-card {
+  width: auto;
+  padding: 20px;
+  padding-top: 15px;
+
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.profile-card__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
